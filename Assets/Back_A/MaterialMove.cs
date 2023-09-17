@@ -6,14 +6,16 @@ public class MaterialMove : MonoBehaviour
 {
     public bool isCheckAbilityWake;
     public bool isCheckObjectMove;
+    public bool isCheckObjectChase;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
         isCheckAbilityWake = false;
-
         isCheckObjectMove = false;
+        isCheckObjectChase = false;
     }
 
     // Update is called once per frame
@@ -27,17 +29,20 @@ public class MaterialMove : MonoBehaviour
                 isCheckAbilityWake = false;
             }
 
-            /*if(isCheckAbilityWake){
+            if(isCheckAbilityWake){
             //障害物（小）のハイライトさせる処理
             
                 if (isCheckObjectMove == true) {
                 //マウスのカーソルに追従させる処理(X方向)
+                    if (Input.GetMouseButtonDown(0)) {
+                        isCheckObjectChase = true;
+                    }
                 }
 
             }
             else{
             //障害物（小）のハイライトをやめる処理
-            }*/
+            }
         }
     }
     
