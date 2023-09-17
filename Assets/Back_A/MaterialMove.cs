@@ -22,23 +22,24 @@ public class MaterialMove : MonoBehaviour
         if (Input.GetKey(KeyCode.E)) {
             if (isCheckAbilityWake == false) {
                 isCheckAbilityWake = true;
-
-          /*if (isCheckAbilityWake) {
-            //障害物（小）のハイライトさせる処理
-
-            if (isCheckObjectMove == true) {
-                
-            }
-        }
-        else {
-            //障害物（小）のハイライトをやめる処理
-        }*/
             }
             else {
                 isCheckAbilityWake = false;
             }
-        }
 
-        
+            /*if(isCheckAbilityWake){
+            //障害物（小）のハイライトさせる処理
+            
+                if (isCheckObjectMove == true) {
+                //マウスのカーソルに追従させる処理(X方向)
+                }
+
+            }
+            else{
+            //障害物（小）のハイライトをやめる処理
+            }*/
+        }
     }
+    
+       
 }
