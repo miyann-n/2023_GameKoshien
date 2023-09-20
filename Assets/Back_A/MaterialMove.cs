@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MaterialMove : MonoBehaviour
 {
     public bool isCheckAbilityWake;
     public bool isCheckObjectMove;
     public bool isCheckObjectChase;
+    public Outline outline;//ハイライトを行うスクリプトの取得
     
 
 
@@ -30,10 +32,9 @@ public class MaterialMove : MonoBehaviour
             }
 
             if(isCheckAbilityWake){
-            //障害物（小）のハイライトさせる処理
+                outline.enabled = true;
             
                 if (isCheckObjectMove == true) {
-                //マウスのカーソルに追従させる処理(X方向)
                     if (Input.GetMouseButtonDown(0)) {
                         isCheckObjectChase = true;
                     }
@@ -41,7 +42,7 @@ public class MaterialMove : MonoBehaviour
 
             }
             else{
-            //障害物（小）のハイライトをやめる処理
+                outline.enabled = false;
             }
         }
     }
