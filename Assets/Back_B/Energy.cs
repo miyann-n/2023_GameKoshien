@@ -53,7 +53,7 @@ public class Energy : MonoBehaviour
 
     void RecoverEnergy()
     {
-        currentEnergy += 20;
+        currentEnergy += 50;
     }
 
 
