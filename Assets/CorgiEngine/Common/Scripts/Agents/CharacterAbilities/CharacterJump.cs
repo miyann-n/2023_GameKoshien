@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
@@ -678,6 +678,7 @@ namespace MoreMountains.CorgiEngine
 			MMAnimatorExtensions.UpdateAnimatorBool (_animator, _hitTheGroundAnimationParameter, _controller.State.JustGotGrounded, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}
 
+    
 		/// <summary>
 		/// Resets parameters in anticipation for the Character's respawn.
 		/// </summary>
@@ -688,4 +689,9 @@ namespace MoreMountains.CorgiEngine
 			NumberOfJumpsLeft = _initialNumberOfJumps;
 		}
 	}
+
+
 }
+
+
+
