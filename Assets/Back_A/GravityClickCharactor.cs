@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityClickEnemy : MonoBehaviour
+public class GravityClickCharactor : MonoBehaviour
 {
     public float PlayerNormalDamage;
     public bool isCheckCanBigObject;
