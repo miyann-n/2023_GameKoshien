@@ -1,5 +1,4 @@
-using UnityEngine;
-using System.Collections;
+using UnityEngine; using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using UnityEngine.Serialization;
@@ -34,7 +33,7 @@ namespace MoreMountains.CorgiEngine
 		public int NumberOfJumps = 2;
 		/// defines how high the character can jump
 		[Tooltip("defines how high the character can jump")]
-		public float JumpHeight = 3.025f;
+		public float JumpHeight = 3.0f;
 		/// basic rules for jumps : where can the player jump ?
 		[Tooltip("basic rules for jumps : where can the player jump ?")]
 		public JumpBehavior JumpRestrictions = JumpBehavior.CanJumpAnywhere;
@@ -95,6 +94,10 @@ namespace MoreMountains.CorgiEngine
 		/// whether or not the jump can be stopped
 		public bool CanJumpStop { get; set; }
 
+		// is item collected
+		public bool isItemCollected;
+
+		//
 		protected float _jumpButtonPressTime = 0;
 		protected float _lastJumpAt = 0;
 		protected bool _stillGroundedAfterJump;
@@ -521,8 +524,13 @@ namespace MoreMountains.CorgiEngine
 			CanJumpStop = true;
 
 			// we make the character jump
+			if(isItemCollected == true)
+			{
+				JumpHeight *= 1.5f;
+			}
 			_controller.SetVerticalForce(Mathf.Sqrt( 2f * JumpHeight * Mathf.Abs(_controller.Parameters.Gravity) ));
 			JumpHappenedThisFrame = true;
+			JumpHeight = 3.0f;
 		}
 
 		/// <summary>
