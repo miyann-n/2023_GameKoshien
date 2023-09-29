@@ -1,32 +1,51 @@
 using UnityEngine;
+using System.Collections;
+using MoreMountains.Tools;
+using MoreMountains.Feedbacks;
+using UnityEngine.Serialization;
 
-public class jamp : MonoBehaviour
+namespace MoreMountains.CorgiEngine
 {
-    public bool isItemACollected = false; // 変数1: アイテムAを獲得しているかどうかを判定するbool型の変数 (デフォルトでfalse)
-    public float jumpSpeed; // 変数2: ジャンプのスピードを設定する変数
-    public float B = 1.0f; // 値Bを保持する変数(いらないやつ)
 
-    void Update()
+    public class jumpForce : MonoBehaviour
     {
-        // 変数1がtrueなら
-        if (isItemACollected)
-        {
-            // 値B(ジャンプ力)を変数2 * 1.5 * Vector2.up
-            B = jumpSpeed * 1.5f * Vector2.up.y;
-        }
-        else
-        {
-            // 変数1がfalseなら、値B(ジャンプ力)を変数2 * Vector2.up
-            B = jumpSpeed  * Vector2.up.y;
-        }
+        public bool isItemACollected = false;
+        public float jumpSpeed;
 
-        // 値Bをデバッグコンソールに出力する
-         if (Input.GetKeyDown(KeyCode.Z))
+        // CharacterJumpからジャンプ力を取得するプロパティ
+        private float JumpHeight
         {
-            Debug.Log("Zキーが押されました。値B: " + B);
+            get
+            {
+                if (isItemACollected)
+                {
+                    return jumpSpeed * 1.5f * Vector2.up.y;
+                }
+                else
+                {
+                    return jumpSpeed * Vector2.up.y;
+                }
+            }
         }
-
 
         
+
+        void Update()
+        {
+    
+
+            // 以下はCharacterJumpの一部
+            // CharacterJumpのジャンプメソッドを呼び出す
+            if (Input.GetKeyDown(KeyCode.Space)) 
+            {
+                CharacterJump characterJump = GetComponent<CharacterJump>();
+                if (characterJump != null)
+                {
+                    characterJump.JumpStart();
+                    Debug.Log("Zキーが押されました。JumpHeight: " + JumpHeight);//いらないやつ
+                }
+            }
+     
+        }
     }
 }
