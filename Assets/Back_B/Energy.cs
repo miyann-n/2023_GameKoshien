@@ -17,48 +17,42 @@ public class Energy : MonoBehaviour
     }
     void Update()
     {
-        //Debugのため（currentEnergyを左クリックで表示）
-        if(Input.GetMouseButtonDown(0))
-        {
-            Debug.Log(currentEnergy);
-        }
-
         //物体移動
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && currentEnergy >= 20)
         {
             currentEnergy -= 20;
-            Debug.Log(currentEnergy);
             energyIncreaseTimer = energyIncreaseDelay;
         }
 
         //重力増強
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && currentEnergy >= 30)
         {
             currentEnergy -= 30;
-            Debug.Log(currentEnergy);
             energyIncreaseTimer = energyIncreaseDelay;
+
         }
 
         //重力反転
-        if(Input.GetKeyDown(KeyCode.G))
+        if(Input.GetKeyDown(KeyCode.G) && currentEnergy >= 50)
         {
             currentEnergy -= 50;
-            Debug.Log(currentEnergy);
             energyIncreaseTimer = energyIncreaseDelay;
+
         }
 
+        // エネルギー増加のタイマーが0より大きい場合、タイマーを減らす
         if (energyIncreaseTimer > 0)
         {
             energyIncreaseTimer -= Time.deltaTime;
-            if (energyIncreaseTimer <= 0)
+        }
+        // エネルギー増加のタイマーが0以下の場合、currentEnergyを20ずつ増加する
+        else
+        {
+            currentEnergy += energyIncreaseRate * Time.deltaTime;
+            if (currentEnergy >= maxEnergy)
             {
-                currentEnergy += energyIncreaseRate * Time.deltaTime;
-                if (currentEnergy >= maxEnergy)
-                {
-                    currentEnergy = maxEnergy;
-                }
+                currentEnergy = maxEnergy;
             }
         }
-
     }
 }
