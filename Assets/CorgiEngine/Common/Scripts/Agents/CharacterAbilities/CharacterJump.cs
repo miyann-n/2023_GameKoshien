@@ -94,7 +94,7 @@ namespace MoreMountains.CorgiEngine
 		/// whether or not the jump can be stopped
 		public bool CanJumpStop { get; set; }
 
-		// is item collected
+		// ジャンプ力が強化されるアイテムを持っているか
 		public bool isItemCollected;
 
 		//
@@ -523,7 +523,7 @@ namespace MoreMountains.CorgiEngine
 			SetJumpFlags();
 			CanJumpStop = true;
 
-			// we make the character jump
+			// 実際のジャンプに関連すること
 			if(isItemCollected == true)
 			{
 				JumpHeight *= 1.5f;
