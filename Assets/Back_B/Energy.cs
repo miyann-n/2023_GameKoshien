@@ -53,7 +53,7 @@ public class Energy : MonoBehaviour
 
     void RecoverEnergy()
     {
-        currentEnergy += 50;
+        currentEnergy += 20 * Time.deltaTime;
     }
 
 
