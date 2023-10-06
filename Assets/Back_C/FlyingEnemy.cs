@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class GroundEnemy : MonoBehaviour
+public class FlyingEnemy : MonoBehaviour
 {
     bool Check;
     float EnemyArea;
@@ -14,7 +14,7 @@ public class GroundEnemy : MonoBehaviour
     // 速度を変更する際の加速度
     [SerializeField] private Vector2 acceleration;
 
-    // 敵の速度を格納する変数（未定義のため、適切な型と初期値を設定する必要があります）
+    // 敵の速度を格納する変数（未定義）
     private float EnemySpeed;
 
     //プレイヤーがエリア内に入ったかを示すグローバル変数
@@ -56,7 +56,7 @@ public class GroundEnemy : MonoBehaviour
 void RigidbodyAccelerator()
 {
     // 加速度を指定してRigidbodyに力を加える
-   // _rigidbody.AddForce(acceleration, ForceMode2D.Acceleration);
+    //_rigidbody.AddForce(acceleration, ForceMode.Acceleration);
 }
 
 /*攻撃処理*/
@@ -101,11 +101,10 @@ void OnCollisionStay2D(Collision2D col) {
      else
      {
         AreaChecker = false;
-     }
     }
 }
-
-/*class SightCheckerExample2D : MonoBehaviour
+}
+class SightCheckerExample2D : MonoBehaviour
 {
     // 自分自身
     [SerializeField] private Transform _self;
@@ -119,7 +118,7 @@ void OnCollisionStay2D(Collision2D col) {
     // 視界の最大距離
     [SerializeField] private float _maxDistance = float.PositiveInfinity;
 
-    #region Logic*/
+    #region Logic
 
     /// <summary>
     /// ターゲットが見えているかどうか
@@ -148,7 +147,7 @@ void OnCollisionStay2D(Collision2D col) {
 
         // 視界判定
         return innerProduct > cosHalf && targetDistance < _maxDistance;
-    }
+    }*/
 
     #endregion
 
@@ -157,5 +156,4 @@ void OnCollisionStay2D(Collision2D col) {
     // 視界判定の結果をGUI出力
     
     #endregion
-    
-}*/
+}

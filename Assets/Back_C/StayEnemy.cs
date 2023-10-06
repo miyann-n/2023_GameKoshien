@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class GroundEnemy : MonoBehaviour
+public class StayEnemy : MonoBehaviour
 {
     bool Check;
     float EnemyArea;
@@ -11,11 +11,6 @@ public class GroundEnemy : MonoBehaviour
 
     // Rigidbodyコンポーネントの参照
     private Rigidbody2D _rigidbody;
-    // 速度を変更する際の加速度
-    [SerializeField] private Vector2 acceleration;
-
-    // 敵の速度を格納する変数（未定義のため、適切な型と初期値を設定する必要があります）
-    private float EnemySpeed;
 
     //プレイヤーがエリア内に入ったかを示すグローバル変数
     bool AreaChecker;
@@ -31,35 +26,8 @@ public class GroundEnemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        Vector2 EnemyPosition =this.transform.position;
-        Debug.Log("Enemy x = " + EnemyPosition.x);
-        Debug.Log("Enemy y = " + EnemyPosition.y);
+    {}
 
-        if ( Check == false){
-            if( EnemyPosition.x == EnemyArea ){
-                x = -1.0f; // xを反転
-            }
-            EnemySpeed = EnemySpeed * x ;
-               /*敵に速度を与える*/
-                RigidbodyAccelerator();
-
-                
-        }
-        else {
-            /*０．５秒待機*/
-            StartCoroutine(WaitAndAttack()); 
-        }
-    }
-    /*速度を与える処理*/
-
-void RigidbodyAccelerator()
-{
-    // 加速度を指定してRigidbodyに力を加える
-   // _rigidbody.AddForce(acceleration, ForceMode2D.Acceleration);
-}
-
-/*攻撃処理*/
      IEnumerator WaitAndAttack()
     {
         yield return new WaitForSeconds(0.5f); // 0.5秒待機
@@ -71,14 +39,8 @@ void RigidbodyAccelerator()
         Debug.Log("Enemy x = " + EnemyPosition.x);
         Debug.Log("Enemy y = " + EnemyPosition.y);
 
-        
-        float Dist = Vector2.Distance(PlayerPosition,EnemyPosition);
-        
-        if(Check==true && Dist > 0 && AreaChecker == true ){
-            EnemySpeed = EnemySpeed * 1.3f;
-            /*AIActionMoveTowardsTarget*/
         }
-    }
+    
 
 /*視界に入ったかの判定するやつ*/
 
