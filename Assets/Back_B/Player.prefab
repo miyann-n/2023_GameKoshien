@@ -523,3 +523,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEnergy: 100
   currentEnergy: 0
+  isMoveObjectSet: 0
+  isGravityIncreaseSet: 0
+  isGravityInversionSet: 0
