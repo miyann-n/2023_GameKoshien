@@ -20596,7 +20596,7 @@ MonoBehaviour:
   ActivableMoreThanOnce: 0
   InactiveTime: 1
   Dialogue:
-  - "\u9EC4\u8272\u306E\u9375\u3092\u53D6\u5F97"
+  - "\u30BB\u30AD\u30E5\u30EA\u30C6\u30A3\u30FC\u30AD\u30FC\uFF11\u3092\u53D6\u5F97"
 --- !u!1 &1546562003212541175
 GameObject:
   m_ObjectHideFlags: 0
