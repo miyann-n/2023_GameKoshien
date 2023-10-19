@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour
+public class HidePlayer : MonoBehaviour
 {
 
 	[SerializeField, Range(0, 10)]
@@ -13,24 +13,27 @@ public class Player : MonoBehaviour
 	//[SerializeField]
 	//AnimationCurve curve;
 
-	private float firstStartTime;
+	private float startTime;
 	private Vector3 startPosition;
 
-	void OnEnable ()
+	void Start ()
 	{
+
 		if (time <= 0) {
 			transform.position = endPosition;
 			enabled = false;
 			return;
 		}
 
-		firstStartTime = Time.timeSinceLevelLoad;
-		startPosition = transform.position;
+		startTime = 3.0f;
+		startPosition = new Vector3(-5, -3, 0);
 	}
 	
 	void Update ()
 	{
-		var diff = Time.timeSinceLevelLoad - firstStartTime;
+    StartCoroutine(Wait());
+
+		var diff = Time.timeSinceLevelLoad - startTime;
 		if (diff > time) {
 			transform.position = endPosition;
 			enabled = false;
@@ -42,7 +45,6 @@ public class Player : MonoBehaviour
 		transform.position = Vector3.Lerp (startPosition, endPosition, rate);
 		//transform.position = Vector3.Lerp (startPosition, endPosition, pos);
 		
-		Debug.Log("A");
 	}
 	
 	void OnDrawGizmosSelected ()
@@ -61,4 +63,10 @@ public class Player : MonoBehaviour
 
 		Gizmos.DrawLine (startPosition, endPosition);
 	}
+    private IEnumerator Wait(){
+
+
+yield return new WaitForSeconds(3.0f);
+    }
+
 }
