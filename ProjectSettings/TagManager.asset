@@ -8,6 +8,8 @@ TagManager:
   - Music
   - Background
   - NoMask
+  - SurprisedBoxZone
+  - Meat
   layers:
   - Default
   - TransparentFX

@@ -10,29 +10,26 @@ public class HidePlayer : MonoBehaviour
 	[SerializeField]
 	Vector3	endPosition;
 
-	//[SerializeField]
-	//AnimationCurve curve;
+	[SerializeField]
+	AnimationCurve curve;
 
 	private float startTime;
 	private Vector3 startPosition;
 
-	void Start ()
+	void OnEnable ()
 	{
-
 		if (time <= 0) {
 			transform.position = endPosition;
 			enabled = false;
 			return;
 		}
 
-		startTime = 3.0f;
-		startPosition = new Vector3(-5, -3, 0);
+		startTime = Time.timeSinceLevelLoad;
+		startPosition = transform.position;
 	}
 	
 	void Update ()
 	{
-    StartCoroutine(Wait());
-
 		var diff = Time.timeSinceLevelLoad - startTime;
 		if (diff > time) {
 			transform.position = endPosition;
@@ -40,12 +37,12 @@ public class HidePlayer : MonoBehaviour
 		}
 
 		var rate = diff / time;
-		//var pos = curve.Evaluate(rate);
+		var pos = curve.Evaluate(rate);
 		
 		transform.position = Vector3.Lerp (startPosition, endPosition, rate);
-		//transform.position = Vector3.Lerp (startPosition, endPosition, pos);
+		transform.position = Vector3.Lerp (startPosition, endPosition, pos);
 		
-	}
+		}
 	
 	void OnDrawGizmosSelected ()
 	{
@@ -63,10 +60,4 @@ public class HidePlayer : MonoBehaviour
 
 		Gizmos.DrawLine (startPosition, endPosition);
 	}
-    private IEnumerator Wait(){
-
-
-yield return new WaitForSeconds(3.0f);
-    }
-
 }
