@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
-  m_Name: Document
+  m_Script: {fileID: 11500000, guid: 56bfaa6641535b642bc1b478c9d3c065, type: 3}
+  m_Name: IDcard1
   m_EditorClassIdentifier: 
-  ItemID: Document
+  ItemID: IDcard1
   TargetInventoryName: MainInventory
   ForceSlotIndex: 0
   TargetIndex: 0
-  Usable: 0
+  Usable: 1
   Consumable: 1
   ConsumeQuantity: 1
   Equippable: 0
   EquippableIfInventoryIsFull: 1
   MoveWhenEquipped: 1
   Droppable: 1
-  CanMoveObject: 1
+  CanMoveObject: 0
   CanSwapObject: 1
   DisplayProperties:
     DisplayEquipUseButton: 1
@@ -33,11 +33,11 @@ MonoBehaviour:
     DisplayUseButton: 1
     DisplayUnequipButton: 1
   Quantity: 1
-  ItemName: "\u8CC7\u6599"
+  ItemName: "ID\u30AB\u30FC\u30C9\uFF11"
   ShortDescription: 
-  Description: "\u904E\u53BB\u306E\u7814\u7A76\u8CC7\u6599?"
-  Icon: {fileID: -315550983, guid: 66b922327a46345d9a91b2bafc614574, type: 3}
-  Prefab: {fileID: 0}
+  Description: "ID\u30AB\u30FC\u30C9\uFF11\n\u30BB\u30AD\u30E5\u30EA\u30C6\u30A3\u30FC\u30C9\u30A2\u30EC\u30D9\u30EB\uFF11\u306B\u4F7F\u7528\u53EF\u80FD"
+  Icon: {fileID: -2024508392, guid: 7d90bda5942fb4d798a2ba58fb859a52, type: 3}
+  Prefab: {fileID: 1733703776698432, guid: 7374ceb9f0821d644a437d55dbe8667c, type: 3}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
   DropProperties:
@@ -81,7 +81,7 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 1
+  MaximumStack: 10
   ItemClass: 0
   TargetEquipmentInventoryName: 
   EquippedSound: {fileID: 0}

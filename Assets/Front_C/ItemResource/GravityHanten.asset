@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56bfaa6641535b642bc1b478c9d3c065, type: 3}
-  m_Name: Level1Key
+  m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
+  m_Name: GravityHanten
   m_EditorClassIdentifier: 
-  ItemID: YellowKey
+  ItemID: GravityHanten
   TargetInventoryName: MainInventory
   ForceSlotIndex: 0
   TargetIndex: 0
-  Usable: 1
+  Usable: 0
   Consumable: 1
   ConsumeQuantity: 1
   Equippable: 0
   EquippableIfInventoryIsFull: 1
   MoveWhenEquipped: 1
   Droppable: 1
-  CanMoveObject: 0
+  CanMoveObject: 1
   CanSwapObject: 1
   DisplayProperties:
     DisplayEquipUseButton: 1
@@ -33,11 +33,11 @@ MonoBehaviour:
     DisplayUseButton: 1
     DisplayUnequipButton: 1
   Quantity: 1
-  ItemName: Yellow Key
-  ShortDescription: It looks like it opens stuff.
-  Description: A yellow key that can open a yellow door.
-  Icon: {fileID: 21300012, guid: f3f4293ccdddd34468f58745d608416e, type: 3}
-  Prefab: {fileID: 1733703776698432, guid: 7374ceb9f0821d644a437d55dbe8667c, type: 3}
+  ItemName: "\u91CD\u529B\u53CD\u8EE2\u30C7\u30FC\u30BF"
+  ShortDescription: 
+  Description: "\u91CD\u529B\u3092\u53CD\u8EE2\u3067\u304D\u308B\u3088\u3046\u306B\u306A\u308B\u3088"
+  Icon: {fileID: 21300000, guid: 966ae47d9f5934231a6ba69441ba2214, type: 3}
+  Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
   DropProperties:
@@ -81,7 +81,7 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 10
+  MaximumStack: 1
   ItemClass: 0
   TargetEquipmentInventoryName: 
   EquippedSound: {fileID: 0}

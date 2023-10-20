@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
-  m_Name: Document
+  m_Name: GravityHanten
   m_EditorClassIdentifier: 
-  ItemID: Document
+  ItemID: GravityHanten
   TargetInventoryName: MainInventory
   ForceSlotIndex: 0
   TargetIndex: 0
@@ -33,10 +33,10 @@ MonoBehaviour:
     DisplayUseButton: 1
     DisplayUnequipButton: 1
   Quantity: 1
-  ItemName: "\u8CC7\u6599"
+  ItemName: "\u91CD\u529B\u53CD\u8EE2\u30C7\u30FC\u30BF"
   ShortDescription: 
-  Description: "\u904E\u53BB\u306E\u7814\u7A76\u8CC7\u6599?"
-  Icon: {fileID: -315550983, guid: 66b922327a46345d9a91b2bafc614574, type: 3}
+  Description: "\u91CD\u529B\u3092\u53CD\u8EE2\u3067\u304D\u308B\u3088\u3046\u306B\u306A\u308B\u3088"
+  Icon: {fileID: 21300000, guid: 966ae47d9f5934231a6ba69441ba2214, type: 3}
   Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
