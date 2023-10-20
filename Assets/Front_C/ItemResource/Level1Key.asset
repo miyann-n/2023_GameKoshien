@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56bfaa6641535b642bc1b478c9d3c065, type: 3}
-  m_Name: YellowKey 1
+  m_Name: Level1Key
   m_EditorClassIdentifier: 
   ItemID: YellowKey
   TargetInventoryName: MainInventory
@@ -23,7 +23,7 @@ MonoBehaviour:
   EquippableIfInventoryIsFull: 1
   MoveWhenEquipped: 1
   Droppable: 1
-  CanMoveObject: 1
+  CanMoveObject: 0
   CanSwapObject: 1
   DisplayProperties:
     DisplayEquipUseButton: 1
