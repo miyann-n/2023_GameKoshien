@@ -8,10 +8,10 @@ public class BossModelChange : MonoBehaviour
     public int bossCoreHelth = 18; //ボスコア体力
     public int i = 2; //体力の変化チェッカー
     public int bossModel = 0; //ボスの状態
-    public bool clear = false; //クリアの状態
-    public GameObject Reciever;
+    public bool isCheckBossClear = false; //クリアの状態
     Animator animator;
     [SerializeField] private MonoBehaviour mmPath;
+    public BossCoreStan bossCoreStan;
     
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class BossModelChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(clear == false){
+        if(isCheckBossClear == false){
             //外殻に計６ダメージ与えられた時
             if(i * 6 == bossHelth){
                 animator.SetBool("break", true);
@@ -41,14 +41,18 @@ public class BossModelChange : MonoBehaviour
                 animator.SetBool("stan", true);
                 animator.SetBool("break", true);
                 bossModel = 2;
-                Reciever.gameObject.SendMessage ("Stan");
+                bossCoreStan.Stan();
                 StartCoroutine(DelayCoroutine());
                 bossHelth = 6;
                 bossCoreHelth = 1;
                 i = 0;
-                bossModel = 0;
+                
             }
-        } 
+        }
+        else
+        {
+            //死亡した時の処理
+        }
     }
 
     //20秒間待つ
@@ -57,6 +61,8 @@ public class BossModelChange : MonoBehaviour
         yield return new WaitForSeconds(20);
         animator.SetBool("stan", false);
         animator.SetBool("break", false);
+        bossModel = 0;
         mmPath.enabled = true;
+        yield break;
     }
 }
