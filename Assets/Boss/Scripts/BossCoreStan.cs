@@ -11,7 +11,7 @@ public class BossCoreStan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+      bossModelChange = GameObject.Find("RetroBlobDash").GetComponent<BossModelChange>();
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class BossCoreStan : MonoBehaviour
     {
       //ボスがスタンした時の処理
       if(MethodCheck == true){
-        bossModelChange = GameObject.Find("RetroBlobDash").GetComponent<BossModelChange>();
+        
         int bossModel = bossModelChange.bossModel;
         bool isCheckBossClear = bossModelChange.isCheckBossClear;
         if(bossModel == 2 && isCheckBossClear == false)
