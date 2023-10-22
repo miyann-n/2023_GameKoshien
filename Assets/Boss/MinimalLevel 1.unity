@@ -470,6 +470,8 @@ GameObject:
   - component: {fileID: 925494661}
   - component: {fileID: 925494645}
   - component: {fileID: 925494644}
+  - component: {fileID: 925494668}
+  - component: {fileID: 925494669}
   m_Layer: 13
   m_Name: MiniBoss
   m_TagString: Untagged
@@ -541,7 +543,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6915fd47789874625b6fd454cfff74d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.12, y: 5.12}
@@ -558,7 +560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925494640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.36, y: -3.51, z: -207.40817}
+  m_LocalPosition: {x: 7.25, y: -3.57, z: -207.40817}
   m_LocalScale: {x: 0.5919, y: 0.5919, z: 0.5919}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -689,7 +691,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925494640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
@@ -697,8 +699,8 @@ MonoBehaviour:
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
-  InitialHealth: 10
-  MaximumHealth: 10
+  InitialHealth: 100
+  MaximumHealth: 100
   Invulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 0}
@@ -708,12 +710,12 @@ MonoBehaviour:
   ImmuneToKnockback: 0
   ImmuneToKnockbackIfZeroDamage: 0
   DeathFeedbacks: {fileID: 0}
-  DestroyOnDeath: 1
+  DestroyOnDeath: 0
   DelayBeforeDestruction: 0
-  CollisionsOffOnDeath: 1
+  CollisionsOffOnDeath: 0
   GravityOffOnDeath: 0
   PointsWhenDestroyed: 0
-  RespawnAtInitialLocation: 0
+  RespawnAtInitialLocation: 1
   ApplyDeathForce: 1
   DeathForce: {x: 0, y: 10}
   ResetForcesOnDeath: 0
@@ -893,7 +895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterType: 1
   PlayerID: 
-  InitialFacingDirection: 1
+  InitialFacingDirection: 0
   DirectionOnSpawn: 0
   CharacterAnimator: {fileID: 925494641}
   UseDefaultMecanim: 1
@@ -909,11 +911,51 @@ MonoBehaviour:
   ModelRotationValue: {x: 0, y: 180, z: 0}
   ModelRotationSpeed: 0
   CharacterHealth: {fileID: 0}
-  SendStateChangeEvents: 1
-  SendStateUpdateEvents: 1
+  SendStateChangeEvents: 0
+  SendStateUpdateEvents: 0
   AirborneDistance: 0.5
   AirborneMinimumTime: 0.1
   CharacterBrain: {fileID: 0}
+--- !u!114 &925494668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925494640}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fc24513c89140afa90465a45f5d6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KnockbackForce: {x: 0, y: 5}
+  DamageCausedKnockbackType: 1
+  DamagePerStomp: 100
+  ResetNumberOfJumpsOnStomp: 0
+  InvincibilityDuration: 0.5
+  PlayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  NumberOfRays: 5
+  RaycastLength: 0.5
+  RaycastVerticalOffset: 0.01
+  StomperMustBeAlive: 1
+--- !u!114 &925494669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925494640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d4d39d68c974e8bbe00641ac122adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxcolli: {fileID: 925494665}
+  stomp: {fileID: 925494668}
+  sp: {fileID: 925494642}
+  CharaMove: {fileID: 925494661}
 --- !u!114 &931537374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,8 +1013,8 @@ MonoBehaviour:
   - PathElementPosition: {x: 0, y: -0.5, z: 0}
     Delay: 0
   AlignmentMode: 0
-  MovementSpeed: 0.5
-  AccelerationType: 0
+  MovementSpeed: 2
+  AccelerationType: 1
   Acceleration:
     serializedVersion: 2
     m_Curve:
@@ -1050,7 +1092,9 @@ MonoBehaviour:
   bossModel: 0
   isCheckBossClear: 0
   mmPath: {fileID: 931537376}
+  boxcolli: {fileID: 4604103235028487382}
   bossCoreStan: {fileID: 1055977331}
+  bossAttackPattern: {fileID: 0}
 --- !u!1001 &966346744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2212,6 +2256,8 @@ GameObject:
   - component: {fileID: 931537378}
   - component: {fileID: 931537397}
   - component: {fileID: 4604103235028487404}
+  - component: {fileID: 4604103235028487406}
+  - component: {fileID: 4604103235028487405}
   m_Layer: 13
   m_Name: RetroBlobDash
   m_TagString: Untagged
@@ -2322,7 +2368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Top: 1
-  Bottom: 2
+  Bottom: 1
   Left: 1
   Right: 1
   ResetForcesOnConstrain: 1
@@ -2366,7 +2412,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4604103235028487364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
@@ -2374,8 +2420,8 @@ MonoBehaviour:
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
-  InitialHealth: 20
-  MaximumHealth: 20
+  InitialHealth: 1000
+  MaximumHealth: 1000
   Invulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 5457080433366640815}
@@ -2408,7 +2454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4604103235028487364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8abe6344b7148db4687d3c84e7712904, type: 3}
   m_Name: 
@@ -3012,6 +3058,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackControl: 0
+  RightMove: {fileID: 4604103235028487406}
+  LeftMove: {fileID: 4604103235028487405}
+  mmPath: {fileID: 931537376}
+  RunningChecker: 0
+--- !u!114 &4604103235028487405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604103235028487364}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681c7609a7bc446afbe3d558173e7f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1
+  endPosition: {x: -18, y: 2.02, z: 0}
+--- !u!114 &4604103235028487406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604103235028487364}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19fdebd6c35943feb2e0f97f523b05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1
+  endPosition: {x: -6, y: 2.02, z: 0}
 --- !u!114 &5457080433366640815
 MonoBehaviour:
   m_ObjectHideFlags: 0

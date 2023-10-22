@@ -11,11 +11,14 @@ public class BossModelChange : MonoBehaviour
     public bool isCheckBossClear = false; //クリアの状態
     Animator animator;
     [SerializeField] private MonoBehaviour mmPath;
+    [SerializeField] private BoxCollider2D boxcolli;
     public BossCoreStan bossCoreStan;
+    public BossAttackPattern bossAttackPattern;
     
     // Start is called before the first frame update
     void Start()
     {
+        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPattern>();
         animator = GetComponent<Animator>(); 
         animator.SetBool("break", false); 
     }
@@ -38,6 +41,7 @@ public class BossModelChange : MonoBehaviour
             //スタン状態になった時
             if(bossCoreHelth == 0){
                 mmPath.enabled = false;
+                //boxcolli.enabled = false;
                 animator.SetBool("stan", true);
                 animator.SetBool("break", true);
                 bossModel = 2;
@@ -45,24 +49,31 @@ public class BossModelChange : MonoBehaviour
                 StartCoroutine(DelayCoroutine());
                 bossHelth = 6;
                 bossCoreHelth = 1;
-                i = 0;
-                
+                i = 0;   
             }
         }
         else
         {
-            //死亡した時の処理
+            animator.SetBool("death", true); //ボス死亡
         }
+        /*if(bossAttackPattern.AttackControl == 2){
+            animator.SetBool("houkou", true);
+        }else if(bossAttackPattern.AttackControl != 2){
+            animator.SetBool("houkou", false);
+        }*/
+        
     }
 
     //20秒間待つ
     private IEnumerator DelayCoroutine()
     {
         yield return new WaitForSeconds(20);
+        bossAttackPattern.RunningChecker = false;
         animator.SetBool("stan", false);
         animator.SetBool("break", false);
         bossModel = 0;
         mmPath.enabled = true;
+        //boxcolli.enabled = true;
         yield break;
     }
 }
