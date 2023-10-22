@@ -6,7 +6,7 @@ public class MiniBoss : MonoBehaviour
 {
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
     private BossAttackPattern bossAttackPattern; //bossattackpatternスクリプト
-    private float PositionX = 7.25f;
+    private float PositionX;
     [SerializeField] private BoxCollider2D boxcolli;
     [SerializeField] private MonoBehaviour stomp;
     [SerializeField] private SpriteRenderer sp;
@@ -20,6 +20,7 @@ public class MiniBoss : MonoBehaviour
         CharaMove.enabled = false;
         boxcolli.enabled = false;
         stomp.enabled = false;
+        PositionX = this.transform.localPosition.x;
     }
 
     // Update is called once per frame

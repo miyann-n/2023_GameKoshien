@@ -7,7 +7,11 @@ public class BossAttackPattern : MonoBehaviour
     public int AttackControl;
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
     private Rubble rubble;
+    public List<GameObject> RubbleList;
+    public GameObject[] RubbleArray;
     private MiniBoss miniboss;
+    public List<GameObject> MiniBossList;
+    public GameObject[] MiniBossArray;
     [SerializeField] private MonoBehaviour RightMove;
     [SerializeField] private MonoBehaviour LeftMove;
     [SerializeField] private MonoBehaviour mmPath;
@@ -21,11 +25,20 @@ public class BossAttackPattern : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AttackControl = Random.Range(0,3);
-        
+        //AttackControl = Random.Range(0,3);
+        AttackControl = 0;
         bossModelChange = GameObject.Find("RetroBlobDash").GetComponent<BossModelChange>();
-        rubble = GameObject.Find("BossRubble").GetComponent<Rubble>();
-        miniboss = GameObject.Find("MiniBoss").GetComponent<MiniBoss>();
+        RubbleArray = GameObject.FindGameObjectsWithTag("Rubble");
+        foreach (GameObject obj in RubbleArray)
+        {
+            RubbleList.Add(obj);
+        }
+        //miniboss = GameObject.Find("MiniBoss").GetComponent<MiniBoss>();
+        MiniBossArray = GameObject.FindGameObjectsWithTag("MiniBoss");
+        foreach (GameObject obj in MiniBossArray)
+        {
+            MiniBossList.Add(obj);
+        }
         RightMove.enabled = false;
         LeftMove.enabled = false;
     }
@@ -55,8 +68,14 @@ public class BossAttackPattern : MonoBehaviour
     private IEnumerator RubbleAttack()
     {
         RunningChecker = true;
-        yield return new WaitForSeconds(10);
-        rubble.rbAttack();
+        yield return new WaitForSeconds(5);
+        int cnt = 0;
+        while(cnt < RubbleList.Count)
+        {
+            rubble = RubbleList[cnt].GetComponent<Rubble>();
+            rubble.rbAttack();
+            cnt++;
+        }
         AttackControl = Random.Range(0,3);
         if(AttackControl == 0){
             AttackControl++;
@@ -65,7 +84,7 @@ public class BossAttackPattern : MonoBehaviour
     private IEnumerator BodyAttack()
     {
         RunningChecker = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         Body();
         AttackControl = Random.Range(0,3);
         if(AttackControl == 1){
@@ -77,8 +96,15 @@ public class BossAttackPattern : MonoBehaviour
     private IEnumerator Summon()
     {
         RunningChecker = true;
-        yield return new WaitForSeconds(10);
-        miniboss.SmAttack(); 
+        yield return new WaitForSeconds(5);
+        int cnt = 0;
+        while(cnt < MiniBossList.Count)
+        {
+            miniboss = MiniBossList[cnt].GetComponent<MiniBoss>();
+            miniboss.SmAttack();
+            cnt++;
+        }
+        //miniboss.SmAttack(); 
         AttackControl = Random.Range(0,3);
         if(AttackControl == 2){
             AttackControl--;
