@@ -41,7 +41,8 @@ public class MiniBoss : MonoBehaviour
         int bossModel = bossModelChange.bossModel;
         if(bossModel != 2){
             posi = new Vector3(PositionX, posi.y, posi.z);
-            this.transform.localPosition = posi; 
+            this.transform.localPosition = posi;
+            MiniBossHelth = 3; 
             sp.enabled = true;
             CharaMove.enabled = true;
             boxcolli.enabled = true;

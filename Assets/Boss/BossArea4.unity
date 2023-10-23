@@ -3228,7 +3228,7 @@ MonoBehaviour:
   stomp: {fileID: 1891869733}
   sp: {fileID: 1891869744}
   CharaMove: {fileID: 1891869736}
-  HorizontalMove: {fileID: 0}
+  HorizontalMove: {fileID: 1891869736}
 --- !u!114 &1891869733
 MonoBehaviour:
   m_ObjectHideFlags: 0
