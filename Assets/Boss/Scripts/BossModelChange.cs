@@ -76,4 +76,11 @@ public class BossModelChange : MonoBehaviour
         //boxcolli.enabled = true;
         yield break;
     }
+
+    public void Clear()
+    {
+      isCheckBossClear = true;
+      boxcolli.enabled = false;
+      Debug.Log(isCheckBossClear);
+    }
 }
