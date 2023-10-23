@@ -95,7 +95,7 @@ namespace MoreMountains.CorgiEngine
 		public bool CanJumpStop { get; set; }
 
 		// ジャンプ力が強化されるアイテムを持っているか
-		public bool isItemCollected;
+		public bool isItemCollected = false;
 
 		//
 		protected float _jumpButtonPressTime = 0;
@@ -452,6 +452,15 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Causes the character to start jumping.
 		/// </summary>
+
+		// 
+		/*
+		private void OnTriggerEnter2D(Collider2D col) {
+			if(col.GameObject.tag == "JumpPowerUP"){
+				isItemCollected = true;
+			}
+		}
+		*/
 		public virtual void JumpStart()
 		{
 			if (!EvaluateJumpConditions())
