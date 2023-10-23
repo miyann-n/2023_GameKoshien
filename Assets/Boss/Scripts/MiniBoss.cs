@@ -7,10 +7,12 @@ public class MiniBoss : MonoBehaviour
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
     private BossAttackPattern bossAttackPattern; //bossattackpatternスクリプト
     private float PositionX;
+    public int MiniBossHelth = 3;
     [SerializeField] private BoxCollider2D boxcolli;
     [SerializeField] private MonoBehaviour stomp;
     [SerializeField] private SpriteRenderer sp;
     [SerializeField] private MonoBehaviour CharaMove;
+    [SerializeField] private MonoBehaviour HorizontalMove;
     void Start()
     {
         bossModelChange = GameObject.Find("RetroBlobDash").GetComponent<BossModelChange>();
@@ -24,21 +26,14 @@ public class MiniBoss : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()//ダメージ処理
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Vector3 posi = this.transform.localPosition;
-        if (other.gameObject.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            boxcolli.enabled = false;
-            sp.enabled = false; //隠す
-            //bossAttackPattern.RunningChecker = false;
+            SpaceInput();
         }
     }
+
     public void SmAttack()
     {
         Vector3 posi = this.transform.localPosition;
@@ -58,4 +53,20 @@ public class MiniBoss : MonoBehaviour
         }
         bossAttackPattern.RunningChecker = false;
     }
+
+    public void SpaceInput() //ダメージ処理
+    {
+        if(MiniBossHelth > 1) //体力減少
+        {
+            MiniBossHelth -= 1;
+        }else
+        {
+            HorizontalMove.enabled = false; //横移動を非アクティブ
+            boxcolli.enabled = false;
+            //HorizontalMove.enabled = false;
+            sp.enabled = false; //隠す
+            MiniBossHelth = 3;
+        }
+        
+    } 
 }

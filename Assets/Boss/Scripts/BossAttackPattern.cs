@@ -25,8 +25,8 @@ public class BossAttackPattern : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //AttackControl = Random.Range(0,3);
-        AttackControl = 0;
+        AttackControl = Random.Range(0,3);
+        //AttackControl = 0;
         bossModelChange = GameObject.Find("RetroBlobDash").GetComponent<BossModelChange>();
         RubbleArray = GameObject.FindGameObjectsWithTag("Rubble");
         foreach (GameObject obj in RubbleArray)

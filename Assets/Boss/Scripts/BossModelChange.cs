@@ -61,7 +61,10 @@ public class BossModelChange : MonoBehaviour
         }else if(bossAttackPattern.AttackControl != 2){
             animator.SetBool("houkou", false);
         }*/
-        
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            SpaceInput();
+        }
     }
 
     //20秒間待つ
@@ -83,4 +86,15 @@ public class BossModelChange : MonoBehaviour
       boxcolli.enabled = false;
       Debug.Log(isCheckBossClear);
     }
+
+    public void SpaceInput()
+    {
+        if(bossModel == 0){
+            bossHelth -= 1;
+        }
+        if(bossModel == 1){
+            bossCoreHelth -= 1;
+        }
+    }   
+        
 }
