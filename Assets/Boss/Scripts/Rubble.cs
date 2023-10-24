@@ -9,7 +9,6 @@ public class Rubble : MonoBehaviour
      
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
     private BossAttackPattern bossAttackPattern; //bossattackpatternスクリプト
-    private bool DestroyChecker = false;
     private float PositionY = 3.5f;
 
     /*public List<GameObject> ObjctList = List<GameObject>();

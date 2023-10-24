@@ -6,53 +6,41 @@ public class RubbleTree : MonoBehaviour
 {
     Rigidbody2D rd;
     [SerializeField] private SpriteRenderer sp;
-     
     private BossModelChangeTree bossModelChange; //bossmodelchangeスクリプト
-    private BossAttackPattern3 bossAttackPattern; //bossattackpatternスクリプト
-    private bool DestroyChecker = false;
-    private float PositionY = 3.5f;
-
-    /*public List<GameObject> ObjctList = List<GameObject>();
-    public GameObject ListObject;
-    private int ObjectCount;*/
+    private BossAttackPatternTree bossAttackPattern; //bossattackpatternスクリプト
+    private float PositionY = 3.5f; //瓦礫初期Y座標
     
     void Start()
     {
         bossModelChange = GameObject.Find("RetroBlobDash").GetComponent<BossModelChangeTree>();
-        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPattern3>();
+        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPatternTree>();
         Vector3 posi = this.transform.localPosition; //瓦礫オブジェクトの初期位置の取得
         rd = this.GetComponent<Rigidbody2D>(); 
         rd.bodyType = RigidbodyType2D.Static; //重力を無効化
-        sp.enabled = false; //隠す
+        sp.enabled = false; //瓦礫を隠す
     }
 
-    /*void update()
-    {
-        GameObject ListObjects = GameObject.Instantiate(ListObject) as GameObject;// ListObjectsとしてプレファブを生成する
-                ListObjects.transform.position = transform.position;// このオブジェクトの位置にプレファブの座標を移動させる
-                ListObjects.transform.rotation = Quaternion.identity;// プレファブの向きを元のままにする
-                ObjectList.Add(ListObjects);// リストにプレファブを加える
-                ObjectCount += 1;
-    }*/
-
+    //床に触れた時の処理
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Vector3 posi = this.transform.localPosition;
+        Vector3 posi = this.transform.localPosition; //初期位置を取得
+        //床に触れた時
         if (other.gameObject.CompareTag("Platform"))
         {
             posi = new Vector3(posi.x, PositionY, posi.z);
-            this.transform.localPosition = posi;
+            this.transform.localPosition = posi; //初期位置にセット
             rd.bodyType = RigidbodyType2D.Static; //重力を無効化
             sp.enabled = false; //隠す
-            bossAttackPattern.RunningChecker = false;
+            bossAttackPattern.RunningChecker = false; //攻撃状態フラグをOFF
         }
     }
 
+    //瓦礫攻撃が呼び出された時
     public void rbAttack()
     {
-        bossAttackPattern.RunningChecker = true;
+        bossAttackPattern.RunningChecker = true; //攻撃状態フラグをON
         bool isCheckBossClear = bossModelChange.isCheckBossClear;
-        //int bossModel = bossModelChange.bossModel;
+        //クリア状態ではない時
         if(isCheckBossClear != true){
             sp.enabled = true; //表示する
             rd.bodyType = RigidbodyType2D.Dynamic; //重力を有効化

@@ -6,10 +6,11 @@ public class BossModelChangeTree : MonoBehaviour
 {
     public int bossHelth = 10; //ボス体力
     public bool isCheckBossClear = false; //クリアの状態
-    Animator animator;
-    [SerializeField] private MonoBehaviour mmPath;
-    [SerializeField] private BoxCollider2D boxcolli;
-    public BossAttackPattern3 bossAttackPattern;
+    Animator animator; //アニメータ
+    [SerializeField] private MonoBehaviour mmPath; //mmPathスクリプト
+    [SerializeField] private BoxCollider2D boxcolli; //boxcolliderスクリプト
+    [SerializeField] private MonoBehaviour RightMove; //reightmoveスクリプト
+    public BossAttackPatternTree bossAttackPattern; //BossAttackPatternTreeスクリプト
     Vector3 startPos;   //初めの場所
     Vector3 endPos;     //向かう場所
 
@@ -17,7 +18,7 @@ public class BossModelChangeTree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPattern3>();
+        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPatternTree>();
         animator = GetComponent<Animator>(); 
         animator.SetBool("break", false); 
     }
@@ -25,84 +26,44 @@ public class BossModelChangeTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //クリアではない時実行
         if(isCheckBossClear == false){
-            //外殻に計６ダメージ与えられた時
-            /*if(i * 6 == bossHelth){
-                animator.SetBool("break", true);
-                bossModel = 1;
-            }
-            //外殻なしに計６ダメージ与えられた時
-            if(i * 6 == bossCoreHelth){
-                animator.SetBool("break", false);
-                bossModel = 0;
-                i -= 1;
-            }
-            //スタン状態になった時
-            if(bossCoreHelth == 0){
-                mmPath.enabled = false;
-                //boxcolli.enabled = false;
-                animator.SetBool("stan", true);
-                animator.SetBool("break", true);
-                bossModel = 2;
-                bossCoreStan.Stan();
-                StartCoroutine(DelayCoroutine());
-                bossHelth = 6;
-                bossCoreHelth = 1;
-                i = 0;   
+            //ダメージ処理
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                SpaceInput();
             }
         }
-        else
-        {
-            animator.SetBool("death", true); //ボス死亡
-        }*/
-        /*if(bossAttackPattern.AttackControl == 2){
-            animator.SetBool("houkou", true);
-        }else if(bossAttackPattern.AttackControl != 2){
-            animator.SetBool("houkou", false);
-        }*/
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            SpaceInput();
-        }
-    }
     }
 
-    //20秒間待つ
-    /*private IEnumerator DelayCoroutine()
-    {
-        yield return new WaitForSeconds(20);
-        bossAttackPattern.RunningChecker = false;
-        animator.SetBool("stan", false);
-        animator.SetBool("break", false);
-        bossModel = 0;
-        mmPath.enabled = true;
-        //boxcolli.enabled = true;
-        yield break;
-    }*/
-
+    //クリアの時に呼び出される関数
     public void Clear()
     {
-      StartCoroutine(GotoTargetR(5));
-      isCheckBossClear = true;
-      boxcolli.enabled = false;
-      Debug.Log(isCheckBossClear);
-      Destroy(gameObject);
+        isCheckBossClear = true; //クリアフラグをONにする
+        boxcolli.enabled = false; //ボックスコライダーをOFFにする
+        //Debug.Log(isCheckBossClear);
+        StartCoroutine(GotoTargetR(5));       
     }
 
+    //ダメージを受けた時に呼び出される関数
     public void SpaceInput()
     {
-        bossHelth -= 1;
-        if(bossHelth < 1){
-            Clear();
+        bossHelth -= 1; //体力を減らす
+
+        if(bossHelth < 1){ 
+            animator.SetBool("break", true); //アニメーションを外殻なしにする
+            Clear(); //クリア処理を送る
         }
     }   
         
+    //体力がなくなった時の逃げ動作
     IEnumerator GotoTargetR(float t)    //引数:t秒で指定した場所へ移動する関数
     {
+        yield return new WaitForSeconds(1);
         float duration = t;     //移動にかける時間（引数:t）   
         float currentTime = 0;  //経過時間を初期化
         startPos = transform.position;     //移動開始位置
-        endPos =  new Vector3(1,2,5);     //向かう場所を指定
+        endPos =  new Vector3(10,2,5);     //向かう場所を指定
         //指定した時間を越えない間、以下の処理を繰り返す
         while (currentTime < duration)
         {
@@ -111,6 +72,6 @@ public class BossModelChangeTree : MonoBehaviour
             transform.position = Vector3.Lerp(startPos, endPos, p); //座標更新
             yield return null;                  //1フレームスキップ
         }
-        
+        Destroy(gameObject); //ゲームオブジェクトを破壊
     }
 }

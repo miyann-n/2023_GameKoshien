@@ -4471,7 +4471,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4604103235028487364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e514a2b7cbba3c94fadd9e100df51189, type: 3}
   m_Name: 
@@ -4969,6 +4969,7 @@ MonoBehaviour:
   isCheckBossClear: 0
   mmPath: {fileID: 931537376}
   boxcolli: {fileID: 4604103235028487382}
+  RightMove: {fileID: 0}
   bossAttackPattern: {fileID: 0}
 --- !u!114 &5457080433366640815
 MonoBehaviour:
