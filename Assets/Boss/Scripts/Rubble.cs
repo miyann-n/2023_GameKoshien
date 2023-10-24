@@ -6,7 +6,7 @@ public class Rubble : MonoBehaviour
 {
     Rigidbody2D rd;
     [SerializeField] private SpriteRenderer sp;
-     
+    [SerializeField] private BoxCollider2D boxcolli;
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
     private BossAttackPattern bossAttackPattern; //bossattackpatternスクリプト
     private float PositionY = 3.5f;
@@ -23,6 +23,7 @@ public class Rubble : MonoBehaviour
         rd = this.GetComponent<Rigidbody2D>(); 
         rd.bodyType = RigidbodyType2D.Static; //重力を無効化
         sp.enabled = false; //隠す
+        boxcolli.enabled = false;
     }
 
     /*void update()
@@ -43,6 +44,7 @@ public class Rubble : MonoBehaviour
             this.transform.localPosition = posi;
             rd.bodyType = RigidbodyType2D.Static; //重力を無効化
             sp.enabled = false; //隠す
+            boxcolli.enabled = false;
             bossAttackPattern.RunningChecker = false;
         }
     }
@@ -54,6 +56,7 @@ public class Rubble : MonoBehaviour
         
         if(bossModel != 2){
             sp.enabled = true; //表示する
+            boxcolli.enabled = true;
             rd.bodyType = RigidbodyType2D.Dynamic; //重力を有効化
         }
     }

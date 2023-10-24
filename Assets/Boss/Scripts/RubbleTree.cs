@@ -6,6 +6,7 @@ public class RubbleTree : MonoBehaviour
 {
     Rigidbody2D rd;
     [SerializeField] private SpriteRenderer sp;
+    [SerializeField] private BoxCollider2D boxcolli;
     private BossModelChangeTree bossModelChange; //bossmodelchangeスクリプト
     private BossAttackPatternTree bossAttackPattern; //bossattackpatternスクリプト
     private float PositionY = 3.5f; //瓦礫初期Y座標
@@ -18,6 +19,7 @@ public class RubbleTree : MonoBehaviour
         rd = this.GetComponent<Rigidbody2D>(); 
         rd.bodyType = RigidbodyType2D.Static; //重力を無効化
         sp.enabled = false; //瓦礫を隠す
+        boxcolli.enabled = false;
     }
 
     //床に触れた時の処理
@@ -31,6 +33,7 @@ public class RubbleTree : MonoBehaviour
             this.transform.localPosition = posi; //初期位置にセット
             rd.bodyType = RigidbodyType2D.Static; //重力を無効化
             sp.enabled = false; //隠す
+            boxcolli.enabled = false;
             bossAttackPattern.RunningChecker = false; //攻撃状態フラグをOFF
         }
     }
@@ -43,6 +46,7 @@ public class RubbleTree : MonoBehaviour
         //クリア状態ではない時
         if(isCheckBossClear != true){
             sp.enabled = true; //表示する
+            boxcolli.enabled = true;
             rd.bodyType = RigidbodyType2D.Dynamic; //重力を有効化
         }
     }
