@@ -461,6 +461,7 @@ namespace MoreMountains.CorgiEngine
 			}
 		}
 		*/
+
 		public virtual void JumpStart()
 		{
 			if (!EvaluateJumpConditions())
