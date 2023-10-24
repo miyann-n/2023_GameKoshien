@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossModelChangeTree : MonoBehaviour
+public class BossModelChangeTwo : MonoBehaviour
 {
-    public int bossHelth = 10; //ボス体力
+    public int bossHelth = 5; //ボス体力
     public bool isCheckBossClear = false; //クリアの状態
-    public bool bossArea = true;
     Animator animator; //アニメータ
     [SerializeField] private MonoBehaviour mmPath; //mmPathスクリプト
     [SerializeField] private BoxCollider2D boxcolli; //boxcolliderスクリプト
@@ -42,7 +41,6 @@ public class BossModelChangeTree : MonoBehaviour
     {
         isCheckBossClear = true; //クリアフラグをONにする
         boxcolli.enabled = false; //ボックスコライダーをOFFにする
-        bossArea = false;
         //Debug.Log(isCheckBossClear);
         StartCoroutine(GotoTargetR(5));       
     }
@@ -53,7 +51,6 @@ public class BossModelChangeTree : MonoBehaviour
         bossHelth -= 1; //体力を減らす
 
         if(bossHelth < 1){ 
-            animator.SetBool("break", true); //アニメーションを外殻なしにする
             Clear(); //クリア処理を送る
         }
     }   
