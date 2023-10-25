@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
+using UnityEngine.SceneManagement; // シーンマネージャー使用
+
 
 namespace MoreMountains.CorgiEngine
 {	
@@ -100,6 +102,17 @@ namespace MoreMountains.CorgiEngine
 		protected const string _walkingAnimationParameterName = "Walking";
 		protected int _speedAnimationParameter;
 		protected int _walkingAnimationParameter;
+
+		void Awake(){
+			//シーンボスエリア３.4の時移動速度を0.8倍にする
+			var scene = SceneManager.GetActiveScene();
+			if(scene.name == "BossArea4"){ 
+				WalkSpeed = WalkSpeed * 0.8f;
+        	}
+			if(scene.name == "BossArea3"){ 
+				WalkSpeed = WalkSpeed * 0.8f;
+        	}
+		}
 
 		/// <summary>
 		/// On Initialization, we set our movement speed to WalkSpeed.

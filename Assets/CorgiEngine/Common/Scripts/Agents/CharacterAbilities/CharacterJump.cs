@@ -3,6 +3,7 @@ using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using UnityEngine.Serialization;
+using UnityEngine.SceneManagement; // シーンマネージャー使用
 
 namespace MoreMountains.CorgiEngine
 {
@@ -120,6 +121,17 @@ namespace MoreMountains.CorgiEngine
 		protected int _doubleJumpingAnimationParameter;
 		protected int _hitTheGroundAnimationParameter;
 
+		void Awake(){
+			//シーンボスエリア３.4の時ジャンプ力を0.8倍にする
+			var scene = SceneManager.GetActiveScene();
+			if(scene.name == "BossArea4"){ 
+				JumpHeight = JumpHeight * 0.8f;
+        	}
+			if(scene.name == "BossArea3"){ 
+				JumpHeight = JumpHeight * 0.8f;
+        	}
+		}
+		
 		/// Evaluates the jump restrictions
 		public virtual bool JumpAuthorized 
 		{ 
