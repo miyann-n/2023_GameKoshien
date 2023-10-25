@@ -8,6 +8,7 @@ TagManager:
   - Music
   - Background
   - NoMask
+  - warp
   layers:
   - Default
   - TransparentFX
