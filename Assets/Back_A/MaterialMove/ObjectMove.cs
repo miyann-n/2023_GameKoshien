@@ -2,28 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigObjectMove : MonoBehaviour
+public class ObjectMove : MonoBehaviour
 {
-    public GravityClickCharactor gravityClickCharactor;
-    Vector3 ObjectStartPosition,mousePos,worldPos;
+    public MaterialMove materialMove;
+    Vector2 mousePos,worldPos;
     // Start is called before the first frame update
     void Start()
     {
-        //オブジェクトの初期座標を取得
-        ObjectStartPosition = this.transform.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gravityClickCharactor.isCheckCanBigObject){
+        if(materialMove.isCheckObjectChase){
             //マウス座標の取得
             mousePos = Input.mousePosition;
             //スクリーン座標をワールド座標に変換
-            worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x,ObjectStartPosition.y,ObjectStartPosition.z));
+            worldPos = Camera.main.ScreenToWorldPoint(new Vector2(mousePos.x,mousePos.y));
             //ワールド座標を移動させるオブジェクトの座標に設定
-            transform.position = worldPos;
+            this.transform.position = worldPos;
+            Debug.Log(this.transform.position);
         }
     }
 }
-

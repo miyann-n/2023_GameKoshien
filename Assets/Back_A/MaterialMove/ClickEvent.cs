@@ -15,6 +15,7 @@ public class ClickEvent : MonoBehaviour
             }
             else{
                 materialMove.isCheckObjectMove = true;
+                Debug.Log("materialMove = true");
             }
         }
         

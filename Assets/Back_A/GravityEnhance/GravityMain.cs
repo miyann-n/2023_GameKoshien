@@ -18,23 +18,24 @@ public class GravityMain : MonoBehaviour
     {
         if (Input.GetKey (KeyCode.Alpha2)|Input.GetKey (KeyCode.Keypad2)){
             //変数1の切り替え
-            if(isCheckKey2){
-                isCheckKey2 = false;
-            }
-            else{
+            if(isCheckKey2 == false){
                 isCheckKey2 = true;
+                Debug.Log("選択");
             }
+        }
 
-            if(Input.GetKey (KeyCode.E)){
+        if(Input.GetKey(KeyCode.E) && isCheckKey2){
             //変数2の切り替え
                 if(isCheckKeyE){
                     isCheckKeyE = false;
+                    Debug.Log("停止");
                 }
                 else{
                     isCheckKeyE = true;
+                    Debug.Log("起動");
                 }
 
             }
-        }
+
     }
 }

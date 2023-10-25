@@ -16,21 +16,24 @@ public class GravityClickCharactor : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+
+    public void GravityEnhance(){
         if(gravityMain.isCheckKeyE){
             /*
             （与ダメを規定するスクリプトの変数）= 2;
-             isCheckCanBigObject = true;
-             Invoke(nameof(ResetDamage),10f);
              */
+             isCheckCanBigObject = true;
+             Debug.Log("ダメージ = 2 & 大障害物動かせる");
+             Invoke("ResetDamage",10f);
+             
         }
     }
 
     private void ResetDamage(){
         /*
         (与ダメを規定するスクリプトの変数) = 1;
-        isCheckCanBigObject = false;
         */
+        isCheckCanBigObject = false;
+        Debug.Log("ダメージ = 1 & 大障害物無理");
     }
 }
