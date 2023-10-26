@@ -454,13 +454,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 
 		// 
-		/*
-		private void OnTriggerEnter2D(Collider2D col) {
-			if(col.GameObject.tag == "JumpPowerUP"){
-				isItemCollected = true;
-			}
-		}
-		*/
 
 		public virtual void JumpStart()
 		{
