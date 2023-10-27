@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 98968037325d64d42972826fe5093755
+guid: 822f6c290891447199e2e6e455d90615
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,22 +105,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_dodai_0
+      name: 3_Beam1_0
       rect:
         serializedVersion: 2
-        x: 149
-        y: 268
-        width: 213
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 212
+        y: 231
+        width: 90
+        height: 35
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08d924cd5d888496d8010c76e059fb3b
-      internalID: 344703394
+      spriteID: ca6c7be2b81484db1817c0188ba352ed
+      internalID: 1315820282
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      3_dodai_0: 344703394
+      3_Beam1_0: 1315820282
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

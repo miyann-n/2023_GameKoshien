@@ -108,12 +108,12 @@ TextureImporter:
       name: 2_Beam3_0
       rect:
         serializedVersion: 2
-        x: 192
-        y: 211
-        width: 126
-        height: 89
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 212
+        y: 194
+        width: 89
+        height: 124
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

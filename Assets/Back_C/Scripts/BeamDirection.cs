@@ -18,6 +18,6 @@ public class BeamDirection : MonoBehaviour
         // ベクトルの方向を回転角度に変換します
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         // オブジェクトを指定した角度に回転させます
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
     }
 }
