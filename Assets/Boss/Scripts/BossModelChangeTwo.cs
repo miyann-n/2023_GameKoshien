@@ -62,7 +62,7 @@ public class BossModelChangeTwo : MonoBehaviour
         float duration = t;     //移動にかける時間（引数:t）   
         float currentTime = 0;  //経過時間を初期化
         startPos = transform.position;     //移動開始位置
-        endPos =  new Vector3(10,2,5);     //向かう場所を指定
+        endPos =  new Vector3(-40,15,5);     //向かう場所を指定
         //指定した時間を越えない間、以下の処理を繰り返す
         while (currentTime < duration)
         {

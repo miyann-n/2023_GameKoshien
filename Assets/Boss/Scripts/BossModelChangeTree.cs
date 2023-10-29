@@ -14,6 +14,7 @@ public class BossModelChangeTree : MonoBehaviour
     public BossAttackPatternTree bossAttackPattern; //BossAttackPatternTreeスクリプト
     Vector3 startPos;   //初めの場所
     Vector3 endPos;     //向かう場所
+    [SerializeField] private GameObject block;
 
     
     // Start is called before the first frame update
@@ -43,6 +44,7 @@ public class BossModelChangeTree : MonoBehaviour
         isCheckBossClear = true; //クリアフラグをONにする
         boxcolli.enabled = false; //ボックスコライダーをOFFにする
         bossArea = false;
+        block.gameObject.SetActive(false);
         //Debug.Log(isCheckBossClear);
         StartCoroutine(GotoTargetR(5));       
     }
