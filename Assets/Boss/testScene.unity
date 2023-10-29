@@ -957,9 +957,10 @@ MonoBehaviour:
   InputKey: 102
   AnimationTriggerParameterName: 
   UseVisualPrompt: 1
-  ButtonPromptPrefab: {fileID: 0}
+  ButtonPromptPrefab: {fileID: 114235008137252218, guid: 59ee6bfadfb8545fe9b7ffddc1f6b82f,
+    type: 3}
   ButtonPromptText: "[\u5165\u308B]"
-  ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
+  ButtonPromptColor: {r: 0.18823531, g: 0.18823531, b: 0.18823531, a: 1}
   ButtonPromptTextColor: {r: 1, g: 1, b: 1, a: 1}
   AlwaysShowPrompt: 0
   ShowPromptWhenColliding: 1
@@ -971,19 +972,7 @@ MonoBehaviour:
   ExitFeedback: {fileID: 0}
   OnActivation:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 893362326}
-        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.ButtonActivated, MoreMountains.CorgiEngine
-        m_MethodName: ShowPrompt
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnExit:
     m_PersistentCalls:
       m_Calls: []
