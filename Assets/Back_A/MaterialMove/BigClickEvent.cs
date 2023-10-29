@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickEvent : MonoBehaviour
+public class BigClickEvent : MonoBehaviour
 {
 
     public MaterialMove materialMove;
+    public GravityClickCharactor gcCharactor;
     private bool isCheckObjectMove;
 
     Vector2 mousePos,worldPos;
 
     void Update()
     {
-        if(isCheckObjectMove && materialMove.isCheckAbilityWake){
+        if(gcCharactor.isCheckCanBigObject && isCheckObjectMove && materialMove.isCheckAbilityWake){
             ObjectMove();
         }
 
@@ -23,7 +24,7 @@ public class ClickEvent : MonoBehaviour
 
     public void ObjectClick(){
         
-        if(materialMove.isCheckAbilityWake){
+        if(materialMove.isCheckAbilityWake && gcCharactor.isCheckCanBigObject){
 
             if(isCheckObjectMove == false){
                 isCheckObjectMove = true;

@@ -42,7 +42,7 @@ public class Rubble : MonoBehaviour
         isCheckLeftClick = false;
         if(isCheckMousePointLR){
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
-            Vector2 force = new Vector2(100f,5.0f);
+            Vector2 force = new Vector2(100f,50f);
             Debug.Log("右に飛ばす");
             rb.AddForce (force, ForceMode2D.Impulse);   
         }

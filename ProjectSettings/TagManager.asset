@@ -9,6 +9,8 @@ TagManager:
   - Background
   - firearm
   - ReversalArea
+  - SmallObject
+  - BigObject
   layers:
   - Default
   - TransparentFX
