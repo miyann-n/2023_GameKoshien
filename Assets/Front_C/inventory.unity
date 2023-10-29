@@ -8425,6 +8425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 979803242}
+  - component: {fileID: 979803243}
   m_Layer: 0
   m_Name: ItemJumpPowerupData
   m_TagString: Untagged
@@ -8449,6 +8450,26 @@ Transform:
   m_Father: {fileID: 1246292574}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &979803243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979803241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0397bb261ecd924ba0668927c40ba3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveActive: 1
+  UniqueIDSuffix: 
+  _guid: inventory-ItemJumpPowerupData-95795fd2-8472-436d-8a07-3d27b017f5bd
+  GenerateGuidButton: 0
+  SavePosition: 1
+  SaveLocalRotation: 1
+  SaveLocalScale: 1
+  SaveActiveState: 1
 --- !u!1 &992237937
 GameObject:
   m_ObjectHideFlags: 0
