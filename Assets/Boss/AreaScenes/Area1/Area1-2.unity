@@ -2702,6 +2702,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 471630585363870977, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 471630585363870977, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 471630585363870977, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2730084002375646734, guid: 0d1c351f113334935ac98ff58040e51e,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2731,6 +2746,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730084002385326564, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730084002385326564, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MoreMountains.CorgiEngine.LevelSelector, MoreMountains.CorgiEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2730084002401759920, guid: 0d1c351f113334935ac98ff58040e51e,
         type: 3}
@@ -2826,6 +2851,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UICamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730084002455054074, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2730084002455054077, guid: 0d1c351f113334935ac98ff58040e51e,
         type: 3}
@@ -3182,6 +3212,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2730084003257951575, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730084003257951575, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2730084003312184650, guid: 0d1c351f113334935ac98ff58040e51e,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3515,6 +3555,21 @@ PrefabInstance:
     - target: {fileID: 2730084003702810173, guid: 0d1c351f113334935ac98ff58040e51e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730084003748996688, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730084003748996688, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730084003748996688, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2730084003808727296, guid: 0d1c351f113334935ac98ff58040e51e,
@@ -3855,6 +3910,16 @@ PrefabInstance:
     - target: {fileID: 2730084004446729929, guid: 0d1c351f113334935ac98ff58040e51e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142782806187853874, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142782806187853874, guid: 0d1c351f113334935ac98ff58040e51e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
