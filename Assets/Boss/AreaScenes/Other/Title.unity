@@ -633,7 +633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688068731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -351.0217, y: -197.4879, z: 0}
+  m_LocalPosition: {x: -351.49, y: -197.76, z: 0}
   m_LocalScale: {x: 0.6975213, y: 0.6975213, z: 0.6975213}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -810,6 +810,7 @@ GameObject:
   - component: {fileID: 1887597085}
   - component: {fileID: 1887597089}
   - component: {fileID: 1887597088}
+  - component: {fileID: 1887597090}
   m_Layer: 5
   m_Name: NewGame
   m_TagString: Untagged
@@ -881,10 +882,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1887597088}
-        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.GoToLevelEntryPoint,
-          MoreMountains.CorgiEngine
-        m_MethodName: GoToNextLevel
+      - m_Target: {fileID: 1887597090}
+        m_TargetAssemblyTypeName: MoreMountains.CorgiEngine.LevelSelector, MoreMountains.CorgiEngine
+        m_MethodName: GoToLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887597083}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af899fbe95055ab49a90ef907eef6f12, type: 3}
   m_Name: 
@@ -1050,3 +1050,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1887597090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887597083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d042072253d11428147ba0d074fa39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: Area1-2
+  Fade: 1
+  Save: 1

@@ -3350,7 +3350,7 @@ MonoBehaviour:
     TimescaleMode: 0
     ExcludeFromHoldingPauses: 0
     ContributeToTotalDuration: 1
-    InitialDelay: 28.87
+    InitialDelay: 28.8
     CooldownDuration: 0
     InterruptsOnStop: 1
     NumberOfRepeats: 0
