@@ -14,7 +14,7 @@ public class gcJumpEnhance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey (KeyCode.F)) {
+        if (Input.GetKeyDown(KeyCode.F)) {
             Debug.Log("2");
             getJumpEnhance = true;
         } 

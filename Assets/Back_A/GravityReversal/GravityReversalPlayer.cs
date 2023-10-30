@@ -12,6 +12,7 @@ public class GravityReversalPlayer : MonoBehaviour
 
     public GravityMain gravityMain;
     public MaterialMove materialMove;
+    public FireArm firearm;
     public EnemySpeed enemySpeed;
     /*public Player player;//プレイヤー情報を取得する。*/
 
@@ -37,8 +38,8 @@ public class GravityReversalPlayer : MonoBehaviour
 
         if(isCheckKey3 && Input.GetKeyDown(KeyCode.E) && isHitReversalGround == false){
             Debug.Log("飛び道具反転");
-            enemySpeed.EnemySpeedf = enemySpeed.EnemySpeedf * -1.0f;
-            Debug.Log(enemySpeed.EnemySpeedf);       
+            firearm.firearmSpeedf = firearm.firearmSpeedf * -1.0f;
+            Debug.Log(firearm.firearmSpeedf);       
         }
 
         if(isCheckKey3 && Input.GetKeyDown(KeyCode.E) && isHitReversalGround){
