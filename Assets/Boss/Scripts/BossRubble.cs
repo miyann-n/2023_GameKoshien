@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rubble : MonoBehaviour
+public class BossRubble : MonoBehaviour
 {
     Rigidbody2D rd;
     [SerializeField] private SpriteRenderer sp;

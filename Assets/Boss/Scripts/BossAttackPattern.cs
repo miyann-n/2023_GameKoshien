@@ -6,7 +6,7 @@ public class BossAttackPattern : MonoBehaviour
 {
     public int AttackControl;
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
-    private Rubble rubble;
+    private BossRubble rubble;
     public List<GameObject> RubbleList;
     public GameObject[] RubbleArray;
     private MiniBoss miniboss;
@@ -72,7 +72,7 @@ public class BossAttackPattern : MonoBehaviour
         int cnt = 0;
         while(cnt < RubbleList.Count)
         {
-            rubble = RubbleList[cnt].GetComponent<Rubble>();
+            rubble = RubbleList[cnt].GetComponent<BossRubble>();
             rubble.rbAttack();
             cnt++;
         }
