@@ -103,8 +103,8 @@ GameObject:
   - component: {fileID: 4846972197049679409}
   - component: {fileID: 4846972197049679374}
   - component: {fileID: -6884489509651700718}
-  - component: {fileID: -3157660447774020752}
   - component: {fileID: 1818006146974011839}
+  - component: {fileID: 5838415208150562164}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -510,7 +510,20 @@ MonoBehaviour:
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
   TargetDamageResistanceProcessor: {fileID: 0}
---- !u!114 &-3157660447774020752
+--- !u!114 &1818006146974011839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846972197049679375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48abac078c88ffe4e98b7b2affb01aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterJump: {fileID: 4846972197049679416}
+--- !u!114 &5838415208150562164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -527,16 +540,3 @@ MonoBehaviour:
   isMoveObjectSet: 0
   isGravityIncreaseSet: 0
   isGravityInversionSet: 0
---- !u!114 &1818006146974011839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4846972197049679375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48abac078c88ffe4e98b7b2affb01aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterJump: {fileID: 4846972197049679416}
