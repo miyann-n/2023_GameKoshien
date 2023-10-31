@@ -1048,7 +1048,7 @@ MonoBehaviour:
   Label: 
   DetectMethod: 1
   DetectionDirection: 0
-  RayWidth: 10
+  RayWidth: 5
   DetectionDistance: 10
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:

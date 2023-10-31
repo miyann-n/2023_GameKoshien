@@ -54,7 +54,7 @@ MonoBehaviour:
   ResetLivesOnGameOver: 1
   ResetPersistentCharacterOnGameOver: 1
   ResetStoredCharacterOnGameOver: 1
-  GameOverScene: RetroAdventureGameOver
+  GameOverScene: GameOver
 --- !u!114 &114992019002501916
 MonoBehaviour:
   m_ObjectHideFlags: 0
