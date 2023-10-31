@@ -27,6 +27,9 @@ namespace MoreMountains.Tools
 		/// whether or not to save this object's active state
 		[Tooltip("whether or not to save this object's active state")]
 		public bool SaveActiveState = true;
+
+		//最後のチェックポイント
+		public GameObject player;
 		
 		/// <summary>
 		/// A struct used to store and serialize the data we want to save
@@ -61,6 +64,8 @@ namespace MoreMountains.Tools
 			if (SavePosition)
 			{
 				this.transform.position = JsonUtility.FromJson<Data>(data).Position;
+				player = GameObject.FindWithTag("Player");
+				player.transform.position = this.transform.position;
 			}
 
 			if (SaveLocalRotation)
