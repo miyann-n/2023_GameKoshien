@@ -32,6 +32,7 @@ GameObject:
   - component: {fileID: 610934954054486371}
   - component: {fileID: 610934954054486428}
   - component: {fileID: -3627903754477440298}
+  - component: {fileID: 3670543263047781194}
   m_Layer: 9
   m_Name: TestCharacter
   m_TagString: Player
@@ -755,6 +756,24 @@ MonoBehaviour:
   AutoAddItemsMainInventory: []
   AutoAddItemsHotbar: []
   AutoEquipWeapon: {fileID: 0}
+--- !u!114 &3670543263047781194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610934954054486429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ed82f220055de419aad7e7e1832197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
 --- !u!1 &610934955502016942
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610934955502016940}
   - component: {fileID: 610934955502016941}
+  - component: {fileID: 7500352429539447209}
   m_Layer: 0
   m_Name: CharacterModel
   m_TagString: Untagged
@@ -839,3 +859,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7500352429539447209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610934955502016942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ed82f220055de419aad7e7e1832197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
