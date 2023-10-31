@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class Ability : MonoBehaviour
 {
-    public Energy energy;
     public Sprite newSpriteMove;
     public Sprite newSpriteJump;
     public Sprite newSpriteReverse;
     public Sprite newSpritenomal;
     private Image image;
 
-    float a;
-    int b;
+    public float a;
+    public int b;
 
     // Use this for initialization
     void Start()
@@ -59,31 +58,18 @@ public class Ability : MonoBehaviour
      
         if (b == 0)
         {
-            energy.isMoveObjectSet = true;
-            energy.isGravityIncreaseSet = false;
-            energy.isGravityInversionSet = false;
             image.sprite = newSpriteMove;
         }
         if (b == 1)
         {
-            energy.isMoveObjectSet = false;
-            energy.isGravityIncreaseSet = true;
-            energy.isGravityInversionSet = false;
             image.sprite = newSpriteJump; 
-
         }
         if (b == 2)
         {
-            energy.isMoveObjectSet = false;
-            energy.isGravityIncreaseSet = false;
-            energy.isGravityInversionSet = true;
             image.sprite = newSpriteReverse;
         }
         if (b == 3)
         {
-            energy.isMoveObjectSet = false;
-            energy.isGravityIncreaseSet = false;
-            energy.isGravityInversionSet = false;
             image.sprite = newSpritenomal;
         }
 
