@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 11400000}
   - component: {fileID: 61962748409527788}
-  - component: {fileID: 7295272410325998276}
+  - component: {fileID: 5495389091274470765}
   m_Layer: 0
   m_Name: LevelStart
   m_TagString: Untagged
@@ -79,7 +79,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7295272410325998276
+--- !u!114 &5495389091274470765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,15 +88,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0397bb261ecd924ba0668927c40ba3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 50ebf8bf56869430da57d60ddafe670b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SaveActive: 1
-  UniqueIDSuffix: 
-  _guid: 
-  GenerateGuidButton: 0
-  SavePosition: 1
-  SaveLocalRotation: 1
-  SaveLocalScale: 1
-  SaveActiveState: 1
-  player: {fileID: 0}
