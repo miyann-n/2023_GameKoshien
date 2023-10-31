@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Energy : MonoBehaviour
 {
-    public int maxEnergy = 100; //最大のエネルギー
+
+    public int maxEnergy; //最大のエネルギー
     public float currentEnergy; //現在のエネルギー
     public bool isMoveObjectSet; //物体移動のアビリティが選択されているかどうか
     public bool isGravityIncreaseSet; //重力増強のアビリティが選択されているかどうか
@@ -16,7 +17,11 @@ public class Energy : MonoBehaviour
 
     void Start()
     {
-        currentEnergy = maxEnergy;   
+        maxEnergy = 100;
+        currentEnergy = maxEnergy;  
+        isMoveObjectSet = false;
+        isGravityIncreaseSet = false;
+        isGravityInversionSet = false;
     }
     void Update()
     {
@@ -56,5 +61,7 @@ public class Energy : MonoBehaviour
                 currentEnergy = maxEnergy;
             }
         }
+
+
     }
 }
