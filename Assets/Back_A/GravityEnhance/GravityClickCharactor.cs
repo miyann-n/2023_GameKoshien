@@ -25,7 +25,7 @@ public class GravityClickCharactor : MonoBehaviour
             //（与ダメを規定するスクリプトの変数）= 2;
              isCheckCanBigObject = true;
              Debug.Log("ダメージ = 2 & 大障害物動かせる");
-             ResetDamage();
+             Invoke("ResetDamage", 10f);
              
         }
     }

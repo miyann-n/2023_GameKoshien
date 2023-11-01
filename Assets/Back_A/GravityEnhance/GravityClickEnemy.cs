@@ -20,18 +20,18 @@ public class GravityClickEnemy : MonoBehaviour
     {
          if (gravityMain.isCheckKeyE)
         {
-                // 変数3=敵の元の移動速度
-                EnemyOriginalSpeed = enemySpeed.EnemySpeedf; //EnemyOriginalSpeedは敵の行動を指定しているスクリプトから取得する
-                Debug.Log(EnemyOriginalSpeed);
+            // 変数3=敵の元の移動速度
+            EnemyOriginalSpeed = enemySpeed.EnemySpeedf; //EnemyOriginalSpeedは敵の行動を指定しているスクリプトから取得する
+            Debug.Log(EnemyOriginalSpeed);
 
-                // 敵の速度=変数3 * 0.8
-                enemySpeed.EnemySpeedf = enemySpeed.EnemySpeedf * 0.8f;
-                Debug.Log(enemySpeed.EnemySpeedf);
-                
+            // 敵の速度=変数3 * 0.8
+            enemySpeed.EnemySpeedf = enemySpeed.EnemySpeedf * 0.8f;
+            Debug.Log(enemySpeed.EnemySpeedf);
 
-                // 10秒待機
-                Invoke("ResetSpeed",10f);
-                Debug.Log("10秒間デバフ");
+
+            // 10秒待機
+            Invoke("ResetSpeed", 10f);
+            Debug.Log("10秒間デバフ");
         }
     }
     

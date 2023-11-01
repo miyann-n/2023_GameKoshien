@@ -32,14 +32,15 @@ public class BigClickEvent : MonoBehaviour
     }
 
     public void ObjectClick(){
-        
-        if(materialMove.isCheckAbilityWake && gcCharactor.isCheckCanBigObject){
 
-                isCheckObjectMove =! isCheckObjectMove;
-                Debug.Log("materialMove = true");
+        if (materialMove.isCheckAbilityWake && gcCharactor.isCheckCanBigObject)
+        {
+
+            isCheckObjectMove = !isCheckObjectMove;
+            Debug.Log("materialMove = true");
 
         }
-        
+
     }
 
     private void ObjectMove(){
