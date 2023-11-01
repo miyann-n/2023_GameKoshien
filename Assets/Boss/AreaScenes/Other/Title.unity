@@ -3022,7 +3022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelName: Area1-2
   Fade: 1
-  Save: 1
+  Save: 0
 --- !u!1 &1920098028
 GameObject:
   m_ObjectHideFlags: 0

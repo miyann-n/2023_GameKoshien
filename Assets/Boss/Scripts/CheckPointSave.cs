@@ -17,14 +17,12 @@ public class CheckPointSave : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void SaveData()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            //other.gameObject.SetActive(false);
-            Debug.Log("yyy");
-            MMEventManager.TriggerEvent(new MMGameEvent("SaveToMemory"));
-            MMEventManager.TriggerEvent(new MMGameEvent("SaveToFile"));
+        //other.gameObject.SetActive(false);
+        Debug.Log("yyy");
+        MMEventManager.TriggerEvent(new MMGameEvent("SaveToMemory"));
+        MMEventManager.TriggerEvent(new MMGameEvent("SaveToFile"));
         }
-    }
+    
 }

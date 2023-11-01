@@ -29,7 +29,7 @@ namespace MoreMountains.Tools
 		public bool SaveActiveState = true;
 
 		//最後のチェックポイント
-		private GameObject player;
+		private GameObject SavePoint;
 		
 		/// <summary>
 		/// A struct used to store and serialize the data we want to save
@@ -63,11 +63,7 @@ namespace MoreMountains.Tools
 		{
 			if (SavePosition)
 			{
-				player = GameObject.FindWithTag("Player");
 				this.transform.position = JsonUtility.FromJson<Data>(data).Position;
-				
-				player.transform.position = this.transform.position;
-				Debug.Log(player.transform.position);
 			}
 
 			if (SaveLocalRotation)

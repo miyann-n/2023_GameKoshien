@@ -12,6 +12,8 @@ TagManager:
   - Platform
   - MiniBoss
   - Boss
+  - SurprisedBoxZone
+  - SavePoint
   layers:
   - Default
   - TransparentFX
