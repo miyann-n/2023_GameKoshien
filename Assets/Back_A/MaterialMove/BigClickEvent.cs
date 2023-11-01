@@ -5,14 +5,23 @@ using UnityEngine;
 public class BigClickEvent : MonoBehaviour
 {
 
-    public MaterialMove materialMove;
-    public GravityClickCharactor gcCharactor;
+    private MaterialMove materialMove;
+    private GravityClickCharactor gcCharactor;
     private bool isCheckObjectMove;
 
     Vector2 mousePos,worldPos;
-
+    private void Start()
+    {
+        materialMove = GameObject.FindWithTag("Player").GetComponent<MaterialMove>();
+        isCheckObjectMove = false;
+        gcCharactor = GameObject.FindWithTag("Player").GetComponent<GravityClickCharactor>();
+    }
     void Update()
     {
+        bool isCheckAbilityWake = materialMove.isCheckAbilityWake;
+
+        bool isCheckCanBigObject = gcCharactor.isCheckCanBigObject;
+
         if(gcCharactor.isCheckCanBigObject && isCheckObjectMove && materialMove.isCheckAbilityWake){
             ObjectMove();
         }
@@ -26,10 +35,8 @@ public class BigClickEvent : MonoBehaviour
         
         if(materialMove.isCheckAbilityWake && gcCharactor.isCheckCanBigObject){
 
-            if(isCheckObjectMove == false){
-                isCheckObjectMove = true;
+                isCheckObjectMove =! isCheckObjectMove;
                 Debug.Log("materialMove = true");
-            }
 
         }
         

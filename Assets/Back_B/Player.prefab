@@ -98,17 +98,18 @@ GameObject:
   - component: {fileID: 4846972197049679395}
   - component: {fileID: 4846972197049679392}
   - component: {fileID: 4846972197049679423}
-  - component: {fileID: 4846972197049679416}
   - component: {fileID: 4846972197049679408}
   - component: {fileID: 4846972197049679409}
   - component: {fileID: -6884489509651700718}
-  - component: {fileID: 1818006146974011839}
-  - component: {fileID: 5838415208150562164}
   - component: {fileID: -7509425975640836487}
+  - component: {fileID: 1818006146974011839}
+  - component: {fileID: 4846972197049679416}
+  - component: {fileID: 5838415208150562164}
   - component: {fileID: -1868445164406060081}
   - component: {fileID: -1038201603501479774}
   - component: {fileID: -3362890376347315826}
   - component: {fileID: -3494975468944978507}
+  - component: {fileID: -3243236859950930973}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -355,40 +356,6 @@ MonoBehaviour:
   TouchTheGroundFeedback: {fileID: 0}
   MinimumAirTimeBeforeFeedback: 0.2
   StopWalkingWhenCollidingWithAWall: 0
---- !u!114 &4846972197049679416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4846972197049679375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c1a8bab4d234998bcbc559bb58fa11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  NumberOfJumps: 1
-  JumpHeight: 3
-  JumpRestrictions: 2
-  ResetCameraOffsetOnJump: 0
-  CanJumpDownOneWayPlatforms: 1
-  JumpIsProportionalToThePressTime: 1
-  JumpMinimumAirTime: 0.1
-  JumpReleaseForceFactor: 2
-  CoyoteTime: 0
-  InputBufferDuration: 0
-  OneWayPlatformsJumpCollisionOffDuration: 0.3
-  MovingPlatformsJumpCollisionOffDuration: 0.05
-  AirJumpFeedbacks: {fileID: 0}
-  DoubleJumpFeedbacks: {fileID: 0}
-  NumberOfJumpsLeft: 0
-  isItemCollected: 0
 --- !u!114 &4846972197049679408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,36 +446,6 @@ MonoBehaviour:
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
   TargetDamageResistanceProcessor: {fileID: 0}
---- !u!114 &1818006146974011839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4846972197049679375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48abac078c88ffe4e98b7b2affb01aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterJump: {fileID: 4846972197049679416}
---- !u!114 &5838415208150562164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4846972197049679375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7bf1afabdd2304bbd976cf23978809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxEnergy: 100
-  currentEnergy: 0
-  isMoveObjectSet: 0
-  isGravityIncreaseSet: 0
-  isGravityInversionSet: 0
 --- !u!114 &-7509425975640836487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +464,70 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
+--- !u!114 &1818006146974011839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846972197049679375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48abac078c88ffe4e98b7b2affb01aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterJump: {fileID: 4846972197049679416}
+--- !u!114 &4846972197049679416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846972197049679375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c1a8bab4d234998bcbc559bb58fa11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  NumberOfJumps: 1
+  JumpHeight: 3
+  JumpRestrictions: 2
+  ResetCameraOffsetOnJump: 0
+  CanJumpDownOneWayPlatforms: 1
+  JumpIsProportionalToThePressTime: 1
+  JumpMinimumAirTime: 0.1
+  JumpReleaseForceFactor: 2
+  CoyoteTime: 0
+  InputBufferDuration: 0
+  OneWayPlatformsJumpCollisionOffDuration: 0.3
+  MovingPlatformsJumpCollisionOffDuration: 0.05
+  AirJumpFeedbacks: {fileID: 0}
+  DoubleJumpFeedbacks: {fileID: 0}
+  NumberOfJumpsLeft: 0
+  isItemCollected: 0
+--- !u!114 &5838415208150562164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846972197049679375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7bf1afabdd2304bbd976cf23978809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnergy: 100
+  currentEnergy: 0
+  isMoveObjectSet: 0
+  isGravityIncreaseSet: 0
+  isGravityInversionSet: 0
 --- !u!114 &-1868445164406060081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,7 +577,7 @@ MonoBehaviour:
   isCheckKey3: 0
   gravityMain: {fileID: -1868445164406060081}
   materialMove: {fileID: -3494975468944978507}
-  firearm: {fileID: 0}
+  firearm: {fileID: 3089190811084111459, guid: 8bb71626da4a6734382e8702a3d6f0dd, type: 3}
   enemySpeed: {fileID: 0}
 --- !u!114 &-3494975468944978507
 MonoBehaviour:
@@ -597,3 +598,32 @@ MonoBehaviour:
   gravityMain: {fileID: -1868445164406060081}
   gclickCharactor: {fileID: -1038201603501479774}
   grPlayer: {fileID: -3362890376347315826}
+--- !u!114 &-3243236859950930973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846972197049679375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -1038201603501479774}
+          m_TargetAssemblyTypeName: GravityClickCharactor, Assembly-CSharp
+          m_MethodName: GravityEnhance
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
