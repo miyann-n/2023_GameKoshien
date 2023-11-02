@@ -22,7 +22,7 @@ public class BigClickEvent : MonoBehaviour
 
         bool isCheckCanBigObject = gcCharactor.isCheckCanBigObject;
 
-        if(gcCharactor.isCheckCanBigObject && isCheckObjectMove && materialMove.isCheckAbilityWake){
+        if(/*gcCharactor.isCheckCanBigObject &&*/ isCheckObjectMove /*&& materialMove.isCheckAbilityWake*/){
             ObjectMove();
         }
 
@@ -33,7 +33,7 @@ public class BigClickEvent : MonoBehaviour
 
     public void ObjectClick(){
 
-        if (materialMove.isCheckAbilityWake && gcCharactor.isCheckCanBigObject)
+        if (materialMove.isCheckAbilityWake/* && gcCharactor.isCheckCanBigObject*/)
         {
 
             isCheckObjectMove = !isCheckObjectMove;
