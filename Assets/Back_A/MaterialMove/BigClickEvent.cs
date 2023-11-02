@@ -7,7 +7,7 @@ public class BigClickEvent : MonoBehaviour
 
     private MaterialMove materialMove;
     private GravityClickCharactor gcCharactor;
-    public Player player;
+    private Energy energy;
     private bool isCheckObjectMove;
 
     Vector2 mousePos,worldPos;
@@ -16,6 +16,7 @@ public class BigClickEvent : MonoBehaviour
         materialMove = GameObject.FindWithTag("Player").GetComponent<MaterialMove>();
         isCheckObjectMove = false;
         gcCharactor = GameObject.FindWithTag("Player").GetComponent<GravityClickCharactor>();
+        energy = GameObject.FindWithTag("Player").GetComponent<Energy>();
     }
     void Update()
     {
@@ -24,7 +25,7 @@ public class BigClickEvent : MonoBehaviour
         bool isCheckCanBigObject = gcCharactor.isCheckCanBigObject;
 
 
-        if(/*gcCharactor.isCheckCanBigObject &&*/ isCheckObjectMove /*&& player.isCheckBigObjectMove*/){
+        if(/*gcCharactor.isCheckCanBigObject &&*/ isCheckObjectMove && energy.isCheckBigObjectMove){
             ObjectMove();
         }
 
@@ -35,7 +36,7 @@ public class BigClickEvent : MonoBehaviour
 
     public void ObjectClick(){
 
-        if (materialMove.isCheckAbilityWake /*&& player.isCheckBigObjectMove*/)
+        if (materialMove.isCheckAbilityWake && energy.isCheckBigObjectMove)
         {
 
             isCheckObjectMove = !isCheckObjectMove;

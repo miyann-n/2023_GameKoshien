@@ -10,6 +10,7 @@ public class Energy : MonoBehaviour
     public bool isMoveObjectSet; //物体移動のアビリティが選択されているかどうか
     public bool isGravityIncreaseSet; //重力増強のアビリティが選択されているかどうか
     public bool isGravityInversionSet; //重力反転のアビリティが選択されているかどうか
+
     private float energyIncreaseDelay = 3f; // エネルギー増加の遅延時間
     private float energyIncreaseRate = 20f; // エネルギー増加の速度
     private float energyIncreaseTimer = 0f; // エネルギー増加のタイマー
@@ -17,6 +18,11 @@ public class Energy : MonoBehaviour
     private bool isMoveObjectActive; //物体移動のアビリティが起動しているかどうか
     private bool isGravityIncreaseActive;  //重力増強のアビリティが起動しているかどうか
     private bool isGravityInversionActive; //重力反転のアビリティが起動しているかどうか
+
+    public bool isCheckBigObjectMove; //大障害物を動かせるかどうか
+
+
+    
 
     private Ability ability;
     private GravityClickCharactor gcCharctor;
@@ -31,6 +37,7 @@ public class Energy : MonoBehaviour
         isGravityIncreaseSet = false;
         isGravityInversionSet = false;
         isMoveObjectActive = false;
+        isCheckBigObjectMove = false;
     }
     void Update()
     {

@@ -528,6 +528,7 @@ MonoBehaviour:
   isMoveObjectSet: 0
   isGravityIncreaseSet: 0
   isGravityInversionSet: 0
+  isCheckBigObjectMove: 0
 --- !u!114 &-1868445164406060081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +561,7 @@ MonoBehaviour:
   PlayerNormalDamage: 0
   isCheckCanBigObject: 0
   gravityMain: {fileID: -1868445164406060081}
+  isBigClicked: 0
 --- !u!114 &-3362890376347315826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,7 +598,6 @@ MonoBehaviour:
   isCheckObjectChase: 0
   roopStoper: 0
   gravityMain: {fileID: -1868445164406060081}
-  gclickCharactor: {fileID: -1038201603501479774}
   grPlayer: {fileID: -3362890376347315826}
 --- !u!114 &-3243236859950930973
 MonoBehaviour:

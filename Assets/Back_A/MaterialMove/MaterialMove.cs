@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class MaterialMove : MonoBehaviour
     public bool roopStoper;
     public GravityMain gravityMain;
     /*public GravityClickCharactor gclickCharactor;*/
-    public PlayerPrefs player;
+    private Energy energy;
     public GravityReversalPlayer grPlayer;
     
     
@@ -23,11 +24,13 @@ public class MaterialMove : MonoBehaviour
         isCheckKey1 = false;
         isCheckAbilityWake = false;
         isCheckObjectChase = false;
+        energy = GameObject.FindWithTag("Player").GetComponent<Energy>();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        bool isCheckBigObjectMove = energy.isCheckBigObjectMove; 
 
         if(Input.GetKeyDown(KeyCode.Alpha1)){
             SelectAbilityMM();
@@ -62,7 +65,7 @@ public class MaterialMove : MonoBehaviour
 
     private void HighLightMM(){ //物体移動が起動した時に移動可能なオブジェクトをハイライトする
     
-        if(isCheckAbilityWake /*&& player.isCheckBigObjectMove == false*/){
+        if(isCheckAbilityWake  && energy.isCheckBigObjectMove == false){
             Debug.Log("物体移動起動");
             GameObject[] canmove= GameObject.FindGameObjectsWithTag("SmallObject");
             GameObject[] cannotmove= GameObject.FindGameObjectsWithTag("BigObject");
@@ -72,13 +75,12 @@ public class MaterialMove : MonoBehaviour
             }
             foreach (GameObject obj in cannotmove){
                 Renderer renderer = obj.GetComponent<SpriteRenderer>();
-                //renderer.material.color = new Color(255f/255f,0f/255f,0f/255f);
-                renderer.material.color = new Color(0f/255f,255f/255f,0f/255f);
+                renderer.material.color = new Color(255f/255f,0f/255f,0f/255f);
             }
             Debug.Log("ハイライト中");
         }
 
-        else if(isCheckAbilityWake /*&& player.isCheckBigObjectMove == false*/){
+        else if(isCheckAbilityWake && energy.isCheckBigObjectMove == true){
             Debug.Log("物体移動起動");
             GameObject[] canmove= GameObject.FindGameObjectsWithTag("SmallObject");
             GameObject[] cannotmove= GameObject.FindGameObjectsWithTag("BigObject");
