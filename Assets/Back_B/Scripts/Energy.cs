@@ -23,7 +23,7 @@ public class Energy : MonoBehaviour
 
 
     
-
+    private MaterialMove materialMove;
     private Ability ability;
     private GravityClickCharactor gcCharctor;
 
@@ -31,6 +31,7 @@ public class Energy : MonoBehaviour
     {   
         ability = GameObject.Find("AvatarHead").GetComponent<Ability>();
         gcCharctor = GameObject.Find("Player").GetComponent<GravityClickCharactor>();
+        materialMove = GameObject.Find("Player").GetComponent<MaterialMove>();
         maxEnergy = 100;
         currentEnergy = maxEnergy;
         isMoveObjectSet = false;
@@ -42,7 +43,7 @@ public class Energy : MonoBehaviour
     void Update()
     {
         int b = ability.b;  //選択されているアビリティの番号
-        bool isBigClicked = gcCharctor.isBigClicked; //大障害物をクリックしたかどうか
+        bool isCharactorClicked = gcCharctor.isCharactorClicked; //大障害物をクリックしたかどうか
 
         if(b == 0)
         {
@@ -70,39 +71,33 @@ public class Energy : MonoBehaviour
         }
 
         //物体移動
-        if(Input.GetKeyDown(KeyCode.E) && isMoveObjectSet  && currentEnergy >= 20)
+        if(Input.GetKeyDown(KeyCode.E) && isMoveObjectSet && currentEnergy >= 20)
         {
             if(!isMoveObjectActive)
             {
-                currentEnergy -= 20;
+                //currentEnergy -= 20;
                 energyIncreaseTimer = energyIncreaseDelay;
             }
             isMoveObjectActive =! isMoveObjectActive;
         }
 
         //重力増強
-        if(isBigClicked && isGravityIncreaseSet && currentEnergy >= 30)
+        if(gcCharctor.isCharactorClicked && isGravityIncreaseSet && currentEnergy >= 30)
         {
-            if(!isGravityIncreaseActive)
-            {
-                currentEnergy -= 30;
-                energyIncreaseTimer = energyIncreaseDelay;
-            }
-            isGravityIncreaseActive =! isGravityIncreaseActive;
+            currentEnergy -= 30;
+            energyIncreaseTimer = energyIncreaseDelay;
+            gcCharctor.isCharactorClicked = false;
         }
 
-        //重力反転 毎回減るんか？
-        if(Input.GetKeyDown(KeyCode.E) && isGravityInversionSet && currentEnergy >= 50)
+        //重力反転 毎回減る
+        if (Input.GetKeyDown(KeyCode.E) && isGravityInversionSet && currentEnergy >= 50)
         {
-            if(!isGravityInversionActive)
-            {
-                currentEnergy -= 50;
-                energyIncreaseTimer = energyIncreaseDelay;
-            }
-            isGravityInversionActive =! isGravityInversionActive;
+            //currentEnergy -= 50;
+            energyIncreaseTimer = energyIncreaseDelay;
         }
 
         //エネルギーの回復
+        
         if (energyIncreaseTimer > 0)
         {
             energyIncreaseTimer -= Time.deltaTime;
@@ -115,7 +110,6 @@ public class Energy : MonoBehaviour
                 currentEnergy = maxEnergy;
             }
         }
-
 
     }
 }

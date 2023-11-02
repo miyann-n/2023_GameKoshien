@@ -8,7 +8,7 @@ public class GravityClickCharactor : MonoBehaviour
     public bool isCheckCanBigObject;
     public GravityMain gravityMain;
 
-    public bool isBigClicked;
+    public bool isCharactorClicked;
 
     SpriteRenderer spriteRenderer;
     //・ここでプレイヤーの与ダメージについて規定するスクリプトの取得
@@ -18,7 +18,7 @@ public class GravityClickCharactor : MonoBehaviour
     {   
         spriteRenderer = GameObject.FindWithTag("BigObject").GetComponent<SpriteRenderer>();
         isCheckCanBigObject = false;
-        isBigClicked = false;
+        isCharactorClicked = false;
     }
 
     // Update is called once per frame
@@ -28,8 +28,8 @@ public class GravityClickCharactor : MonoBehaviour
             //（与ダメを規定するスクリプトの変数）= 2;
              //isCheckCanBigObject = true;
              Debug.Log("ダメージ = 2" /*& 大障害物動かせる"*/);
+             isCharactorClicked = true;
              Invoke("ResetDamage", 10f);
-             isBigClicked = true;
         }
     }
 

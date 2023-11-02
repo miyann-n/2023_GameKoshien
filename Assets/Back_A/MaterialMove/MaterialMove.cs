@@ -10,6 +10,8 @@ public class MaterialMove : MonoBehaviour
     public bool isCheckAbilityWake;
     public bool isCheckObjectChase;
     public bool roopStoper;
+
+    public bool isNowOnHighLitht;
     public GravityMain gravityMain;
     /*public GravityClickCharactor gclickCharactor;*/
     private Energy energy;
@@ -31,14 +33,21 @@ public class MaterialMove : MonoBehaviour
     void Update()
     {   
         bool isCheckBigObjectMove = energy.isCheckBigObjectMove; 
+        float currentEnergy = energy.currentEnergy;
 
         if(Input.GetKeyDown(KeyCode.Alpha1)){
             SelectAbilityMM();
         }
-    
-        if (Input.GetKeyDown(KeyCode.E) && isCheckKey1) {
+        if(Input.GetKeyDown(KeyCode.E) && isCheckKey1 && isNowOnHighLitht)
+        {
+            test();
+            isNowOnHighLitht = false;
+        }
+        if (Input.GetKeyDown(KeyCode.E) && isCheckKey1 && currentEnergy >= 20 && isNowOnHighLitht == false) {
             AbilityOnOffMM();
             HighLightMM();
+            Debug.Log("kantu");
+            isNowOnHighLitht = true;
         }
 
     }
@@ -63,8 +72,11 @@ public class MaterialMove : MonoBehaviour
 
     }
 
-    private void HighLightMM(){ //物体移動が起動した時に移動可能なオブジェクトをハイライトする
+    public void HighLightMM(){ //物体移動が起動した時に移動可能なオブジェクトをハイライトする
     
+        Debug.Log(isCheckAbilityWake);
+        Debug.Log(energy.isCheckBigObjectMove);
+
         if(isCheckAbilityWake  && energy.isCheckBigObjectMove == false){
             Debug.Log("物体移動起動");
             GameObject[] canmove= GameObject.FindGameObjectsWithTag("SmallObject");
@@ -78,6 +90,7 @@ public class MaterialMove : MonoBehaviour
                 renderer.material.color = new Color(255f/255f,0f/255f,0f/255f);
             }
             Debug.Log("ハイライト中");
+            energy.currentEnergy -= 20;
         }
 
         else if(isCheckAbilityWake && energy.isCheckBigObjectMove == true){
@@ -94,8 +107,8 @@ public class MaterialMove : MonoBehaviour
             }
             Debug.Log("ハイライト中");
         }
-
-        else{
+    }
+        private void test() {
             isCheckObjectChase = false;
             GameObject[] canmove= GameObject.FindGameObjectsWithTag("SmallObject");
             GameObject[] cannotmove= GameObject.FindGameObjectsWithTag("BigObject");
@@ -110,7 +123,6 @@ public class MaterialMove : MonoBehaviour
             Debug.Log("物体移動中止");
         }
 
-    }
 
 
 }
