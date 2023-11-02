@@ -7,13 +7,14 @@ public class BigRubble : MonoBehaviour
     public bool isCheckLeftClick;
     public bool isCheckMousePointLR;
     private bool isCheckCollisionPlayer;
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
     
-    public Player player;
+    private Energy energy;
 
     // Start is called before the first frame update
     void Start()
     {
+        energy = GameObject.FindWithTag("Player").GetComponent<Energy>();
         isCheckLeftClick = false;
         isCheckMousePointLR = false;
         isCheckCollisionPlayer = false;
@@ -22,12 +23,14 @@ public class BigRubble : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(Input.GetMouseButton(0) && player.isCheckBigObjectMove){
+    {   
+        bool isCheckBigObjectMove = energy.isCheckBigObjectMove;   
+
+        if(Input.GetMouseButton(0) && energy.isCheckBigObjectMove){
             RubbleMove();
         }
 
-        if(Input.GetMouseButtonUp(0) && player.isCheckBigObjectMove){
+        if(Input.GetMouseButtonUp(0) && energy.isCheckBigObjectMove){
             RubbleLaunch();
         }
 
