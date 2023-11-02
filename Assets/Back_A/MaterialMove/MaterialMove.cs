@@ -72,7 +72,8 @@ public class MaterialMove : MonoBehaviour
             }
             foreach (GameObject obj in cannotmove){
                 Renderer renderer = obj.GetComponent<SpriteRenderer>();
-                renderer.material.color = new Color(255f/255f,0f/255f,0f/255f);
+                //renderer.material.color = new Color(255f/255f,0f/255f,0f/255f);
+                renderer.material.color = new Color(0f/255f,255f/255f,0f/255f);
             }
             Debug.Log("ハイライト中");
         }
