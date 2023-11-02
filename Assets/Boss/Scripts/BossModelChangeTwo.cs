@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossModelChangeTwo : MonoBehaviour
 {
@@ -72,5 +73,6 @@ public class BossModelChangeTwo : MonoBehaviour
             yield return null;                  //1フレームスキップ
         }
         Destroy(gameObject); //ゲームオブジェクトを破壊
+        SceneManager.LoadScene("Boss2Clear");
     }
 }

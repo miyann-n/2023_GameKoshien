@@ -19,6 +19,5 @@ public class SceneSave : MonoBehaviour
     public void SceneSaved()
     {
         PlayerPrefs.SetString ("Area", "1-2");
-        Save ();
     }
 }

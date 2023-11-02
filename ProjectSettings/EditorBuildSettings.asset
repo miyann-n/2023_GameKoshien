@@ -314,4 +314,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Boss/AreaScenes/Area1/Room1.unity
     guid: b421d9cc7f1ab4c5fbb505398083eb03
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Boss2Clear.unity
+    guid: a0cdebec1240843778b955578a7ee2c7
   m_configObjects: {}
