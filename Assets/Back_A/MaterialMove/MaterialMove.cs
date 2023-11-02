@@ -10,7 +10,8 @@ public class MaterialMove : MonoBehaviour
     public bool isCheckObjectChase;
     public bool roopStoper;
     public GravityMain gravityMain;
-    public GravityClickCharactor gclickCharactor;
+    /*public GravityClickCharactor gclickCharactor;*/
+    public PlayerPrefs player;
     public GravityReversalPlayer grPlayer;
     
     
@@ -61,7 +62,7 @@ public class MaterialMove : MonoBehaviour
 
     private void HighLightMM(){ //物体移動が起動した時に移動可能なオブジェクトをハイライトする
     
-        if(isCheckAbilityWake && gclickCharactor.isCheckCanBigObject == false){
+        if(isCheckAbilityWake /*&& player.isCheckBigObjectMove == false*/){
             Debug.Log("物体移動起動");
             GameObject[] canmove= GameObject.FindGameObjectsWithTag("SmallObject");
             GameObject[] cannotmove= GameObject.FindGameObjectsWithTag("BigObject");
@@ -76,7 +77,7 @@ public class MaterialMove : MonoBehaviour
             Debug.Log("ハイライト中");
         }
 
-        else if(isCheckAbilityWake && gclickCharactor.isCheckCanBigObject){
+        else if(isCheckAbilityWake /*&& player.isCheckBigObjectMove == false*/){
             Debug.Log("物体移動起動");
             GameObject[] canmove= GameObject.FindGameObjectsWithTag("SmallObject");
             GameObject[] cannotmove= GameObject.FindGameObjectsWithTag("BigObject");
