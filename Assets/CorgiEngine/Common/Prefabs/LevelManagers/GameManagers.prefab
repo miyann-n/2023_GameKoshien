@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 114992019002501916}
   - component: {fileID: 114903719044035428}
   - component: {fileID: 7356013443134973923}
+  - component: {fileID: 9043855942958736631}
   m_Layer: 0
   m_Name: GameManagers
   m_TagString: Untagged
@@ -101,3 +102,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Button: {fileID: 0}
+--- !u!114 &9043855942958736631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66839a3914de3d4db7c5682fc89f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutomaticallyUnparentOnAwake: 1
+  PersistenceID: MMPersistency
+  ListenForSaveEvents: 1
+  ListenForLoadEvents: 1
+  ListenForSaveToMemoryEvents: 1
+  ListenForLoadFromMemoryEvents: 1
+  ListenForSaveToFileEvents: 1
+  ListenForLoadFromFileEvents: 1
+  SaveToFileOnSaveEvents: 1
+  LoadFromFileOnLoadEvents: 1
+  SaveToMemoryButton: 0
+  LoadFromMemoryButton: 0
+  SaveToFileButton: 0
+  LoadFromFileButton: 0
+  DeletePersistencyFileButton: 0
+  SceneDatas:
+    _keys: []
+    _values: []

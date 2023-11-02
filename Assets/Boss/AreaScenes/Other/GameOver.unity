@@ -834,6 +834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678003288}
   - component: {fileID: 678003289}
+  - component: {fileID: 678003290}
   m_Layer: 5
   m_Name: ButtonLevelSelection (1)
   m_TagString: Untagged
@@ -872,6 +873,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0617763b4190c364093ae8e7b62aea45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &678003290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678003287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193bbf164db32874d8aff4329f973a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &702858825

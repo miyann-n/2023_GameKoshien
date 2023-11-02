@@ -27,9 +27,11 @@ namespace MoreMountains.Tools
 		/// whether or not to save this object's active state
 		[Tooltip("whether or not to save this object's active state")]
 		public bool SaveActiveState = true;
+		public bool SaveScene = true;
 
 		//最後のチェックポイント
 		private GameObject SavePoint;
+		public bool isStartButton = false;
 		
 		/// <summary>
 		/// A struct used to store and serialize the data we want to save
@@ -41,6 +43,7 @@ namespace MoreMountains.Tools
 			public Quaternion LocalRotation;
 			public Vector3 LocalScale;
 			public bool ActiveState;
+			public int SceneName;
 		}
 
 		/// <summary>
@@ -52,7 +55,8 @@ namespace MoreMountains.Tools
 			return JsonUtility.ToJson(new Data { Position = this.transform.position, 
 													LocalRotation = this.transform.localRotation, 
 													LocalScale = this.transform.localScale, 
-													ActiveState = this.gameObject.activeSelf });
+													ActiveState = this.gameObject.activeSelf, 
+													SceneName = SceneManager.GetActiveScene ().buildIndex});
 		}
 
 		/// <summary>
@@ -63,7 +67,15 @@ namespace MoreMountains.Tools
 		{
 			if (SavePosition)
 			{
-				this.transform.position = JsonUtility.FromJson<Data>(data).Position;
+				if(JsonUtility.FromJson<Data>(data).Position.y > 0f)
+				{
+					this.transform.position = JsonUtility.FromJson<Data>(data).Position + new Vector3(-5f,0f,0f);
+				}
+				if(JsonUtility.FromJson<Data>(data).Position.y < 0f)
+				{
+					this.transform.position = JsonUtility.FromJson<Data>(data).Position + new Vector3(-5f,3f,0f);
+				}
+				
 			}
 
 			if (SaveLocalRotation)
