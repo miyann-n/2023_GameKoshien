@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using RubbleManager;
+using System.IO;
 
 public class Rubble : MonoBehaviour
 {
+    RubbleManager.RubbleManagement  rubbleManager = new RubbleManager.RubbleManagement();
     public bool isCheckLeftClick;
     public bool isCheckMousePointLR;
     private bool isCheckCollisionPlayer;
 
+    //public GameObject[] PlayerPrefabs;
     public RubbleManagement rubbleManagement;
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -22,20 +26,21 @@ public class Rubble : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        //bool isRubbleItemCollected = rubbleManagement.isRubbleItemCollected;
-        Debug.Log(rubbleManagement.isRubbleItemCollected);
-        if(Input.GetMouseButton(0) && rubbleManagement.isRubbleItemCollected){
+    {
+        string isRubbleItemCollected = File.ReadAllText("Assets/Back_B/Scripts/Flags.txt");
+        if(Input.GetMouseButton(0) && isRubbleItemCollected == "true"){
             RubbleMove();
+            Debug.Log("クリック中");
         }
 
-        if(Input.GetMouseButtonUp(0) && rubbleManagement.isRubbleItemCollected){
+        if(Input.GetMouseButtonUp(0) && isRubbleItemCollected == "true"){
             RubbleLaunch();
         }
 
     }
 
     private void RubbleMove(){
+        Debug.Log("RubbleMove is colled");
         if(isCheckCollisionPlayer){
             GameObject player = GameObject.FindWithTag("Player");
             Vector2 playerPosition = player.transform.position;
@@ -61,6 +66,7 @@ public class Rubble : MonoBehaviour
     }
 
     public void RubbleLaunch(){
+        Debug.Log("RubbleLauch is colled");
         if(isCheckLeftClick){
             Debug.Log("クリック離し");
             isCheckLeftClick = false;

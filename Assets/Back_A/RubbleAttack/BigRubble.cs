@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.CorgiEngine;
+using RubbleManager;
+using System.IO;
 
 public class BigRubble : MonoBehaviour
-{
+{   
+    RubbleManager.RubbleManagement  rubbleManager = new RubbleManager.RubbleManagement();
     public bool isCheckLeftClick;
     public bool isCheckMousePointLR;
     private bool isCheckCollisionPlayer;
@@ -13,7 +16,6 @@ public class BigRubble : MonoBehaviour
     //public GameObject player;
 
 
-    public Energy energy;
     public RubbleManagement rubbleManagement;
     // Start is called before the first frame update
     void Start()
@@ -28,14 +30,14 @@ public class BigRubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        bool isRubbleItemCollected = rubbleManagement.isRubbleItemCollected;
+        string isRubbleItemCollected = File.ReadAllText("Assets/Back_B/Scripts/Flags.txt");
+        string isCheckBigObjectMove = File.ReadAllText("Assets/Back_B/Scripts/EnergyFlags.txt");
         
-        if(Input.GetMouseButton(0) && energy.isCheckBigObjectMove && isRubbleItemCollected){
+        if(Input.GetMouseButton(0) && isCheckBigObjectMove == "true" && isRubbleItemCollected == "true"){
             RubbleMove();
-            Debug.Log(energy.isCheckBigObjectMove);
         }
 
-        if(Input.GetMouseButtonUp(0) && energy.isCheckBigObjectMove && isRubbleItemCollected){
+        if(Input.GetMouseButtonUp(0) && isCheckBigObjectMove == "true" && isRubbleItemCollected == "true"){
             RubbleLaunch();
         }
 

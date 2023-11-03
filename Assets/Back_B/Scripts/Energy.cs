@@ -35,12 +35,11 @@ public class Energy : MonoBehaviour
         isGravityIncreaseSet = false;
         isGravityInversionSet = false;
         isMoveObjectActive = false;
-        isCheckBigObjectMove = false;
+        //isCheckBigObjectMove = false;
     }
     void Update()
     {
         bool isCharactorClicked = gcCharctor.isCharactorClicked; //大障害物をクリックしたかどうか
-        /*
         int b = ability.b;  //選択されているアビリティの番号
         
         if(b == 0)
@@ -67,7 +66,6 @@ public class Energy : MonoBehaviour
             isGravityIncreaseSet = false;
             isGravityInversionSet = false;
         }
-        */
 
         //物体移動
         if(Input.GetKeyDown(KeyCode.E) && isMoveObjectSet && currentEnergy >= 20)

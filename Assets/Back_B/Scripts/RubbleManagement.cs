@@ -2,38 +2,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.CorgiEngine;
+using System.IO;
+using System;
+using UnityEngine.XR;
+using UnityEditor;
 
-public class RubbleManagement : MonoBehaviour
+namespace RubbleManager
 {
-    public bool isRubbleItemCollected;
-    bool isEntering = false;
-    // Start is called before the first frame update
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "RubbleItem"){
-            isEntering = true;
-            Debug.Log(isEntering);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
+    public class RubbleManagement : MonoBehaviour
     {
-       // bool isBigRubbleItemCollected = bigRubble.isBigRubbleItemCollected;
-        //bool isSmallRubbleItemCollected = rubble.isSmallRubbleItemCollected;
+        public bool isRubbleItemCollected;
+        bool isEntering = false;
+        // Start is called before the first frame update
 
-        if(isEntering && Input.GetKeyDown(KeyCode.F))
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            isRubbleItemCollected = true;
-            Debug.Log(isRubbleItemCollected);
+            if (other.gameObject.tag == "RubbleItem")
+            {
+                isEntering = true;
+            }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject.tag == "RubbleItem")
+        // Update is called once per frame
+        void Update()
         {
-            isEntering = false;
-            Debug.Log(isEntering);
+            if (isEntering && Input.GetKeyDown(KeyCode.F))
+            {
+                /*
+                string originFlags = File.ReadAllText("Assets/Back_B/Scripts/Flags.txt");
+                string[] flags = originFlags.Split('\n');
+                flags[0] = "true";
+                originFlags = "";
+                foreach (string f in flags)
+                {
+                    originFlags = f + "\n";
+                }
+                Debug.Log(originFlags);
+                File.WriteAllText("Assets/Back_B/Scripts/Flags.txt", originFlags);
+                isEntering = false;
+                */
+                File.WriteAllText("Assets/Back_B/Scripts/Flags.txt", "true");
+                isEntering = false;
+            }
         }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.gameObject.tag == "RubbleItem")
+            {
+                isEntering = false;
+            }
+        }
+
+        public bool getIsRubbleItemCollected()
+        {
+            return isRubbleItemCollected;
+        }
+
     }
 }

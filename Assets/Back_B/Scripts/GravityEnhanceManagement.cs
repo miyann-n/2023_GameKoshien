@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.CorgiEngine;
+using System.IO;
 
 public class GravityEnhanceManagement : MonoBehaviour
 {
@@ -18,7 +19,9 @@ public class GravityEnhanceManagement : MonoBehaviour
     private void Update() {
         if(isEntering && Input.GetKeyDown(KeyCode.F))
         {
-            energy.isCheckBigObjectMove = true;
+            File.WriteAllText("Assets/Back_B/Scripts/EnergyFlags.txt", "true");
+            isEntering = false;
+            //energy.isCheckBigObjectMove = true;
         }
     }
 

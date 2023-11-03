@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using JetBrains.Annotations;
 
 public class MaterialMove : MonoBehaviour
 {
@@ -32,8 +34,9 @@ public class MaterialMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        bool isCheckBigObjectMove = energy.isCheckBigObjectMove; 
         float currentEnergy = energy.currentEnergy;
+        string isCheckBigObjectMove = File.ReadAllText("Assets/Back_B/Scripts/Flags.txt");
+
 
         if(Input.GetKeyDown(KeyCode.Alpha1)){
             SelectAbilityMM();
@@ -76,8 +79,9 @@ public class MaterialMove : MonoBehaviour
     
         Debug.Log(isCheckAbilityWake);
         Debug.Log(energy.isCheckBigObjectMove);
+        string isCheckBigObjectMove = File.ReadAllText("Assets/Back_B/Scripts/Flags.txt");
 
-        if(isCheckAbilityWake  && energy.isCheckBigObjectMove == false){
+        if(isCheckAbilityWake  && isCheckBigObjectMove != "true" ){
             Debug.Log("物体移動起動");
             GameObject[] canmove= GameObject.FindGameObjectsWithTag("SmallObject");
             GameObject[] cannotmove= GameObject.FindGameObjectsWithTag("BigObject");
@@ -93,7 +97,7 @@ public class MaterialMove : MonoBehaviour
             energy.currentEnergy -= 20;
         }
 
-        else if(isCheckAbilityWake && energy.isCheckBigObjectMove == true){
+        else if(isCheckAbilityWake && isCheckBigObjectMove == "true"){
             Debug.Log("物体移動起動");
             GameObject[] canmove= GameObject.FindGameObjectsWithTag("SmallObject");
             GameObject[] cannotmove= GameObject.FindGameObjectsWithTag("BigObject");
