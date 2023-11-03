@@ -484,6 +484,7 @@ GameObject:
   - component: {fileID: 7428084003964687003}
   - component: {fileID: 7389765585268451367}
   - component: {fileID: 7428084003964687002}
+  - component: {fileID: -343537855254378198}
   m_Layer: 13
   m_Name: GroundEnemy
   m_TagString: Untagged
@@ -1180,6 +1181,21 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnlyPlayWhenEnteringState: 1
+--- !u!114 &-343537855254378198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388237782473123457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+  AfterTimeMin: 3
+  AfterTimeMax: 3
 --- !u!1 &7389175069792241375
 GameObject:
   m_ObjectHideFlags: 0
