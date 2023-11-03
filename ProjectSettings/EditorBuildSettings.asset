@@ -312,7 +312,7 @@ EditorBuildSettings:
     path: Assets/Boss/AreaScenes/Other/GameOver.unity
     guid: c45d1f05ad6f14b29b22da3bb74c47a4
   - enabled: 1
-    path: Assets/Boss/AreaScenes/Area1/Room1.unity
+    path: 
     guid: b421d9cc7f1ab4c5fbb505398083eb03
   - enabled: 1
     path: Assets/Boss/AreaScenes/Area2/Boss2Clear.unity
@@ -428,4 +428,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Boss/AreaScenes/Area2/Rooms/Room10.unity
     guid: 629c5f7d2b76343f2bda704a57732a1d
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area3/Boss3Clear.unity
+    guid: 6c122f1790aa24df7824bf720a5bb91f
   m_configObjects: {}
