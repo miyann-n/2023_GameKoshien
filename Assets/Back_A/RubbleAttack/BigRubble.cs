@@ -9,12 +9,14 @@ public class BigRubble : MonoBehaviour
     private bool isCheckCollisionPlayer;
     private Rigidbody2D rb;
     
+    //public GameObject player;
+    public GameObject player;
     private Energy energy;
 
     // Start is called before the first frame update
     void Start()
     {
-        energy = GameObject.FindWithTag("Player").GetComponent<Energy>();
+        energy = player.GetComponent<Energy>();
         isCheckLeftClick = false;
         isCheckMousePointLR = false;
         isCheckCollisionPlayer = false;
@@ -26,12 +28,18 @@ public class BigRubble : MonoBehaviour
     {   
         bool isCheckBigObjectMove = energy.isCheckBigObjectMove;   
 
-        if(Input.GetMouseButton(0) && energy.isCheckBigObjectMove){
+
+        if(Input.GetMouseButton(0) /*&& isCheckBigObjectMovez*/){
             RubbleMove();
+            Debug.Log(isCheckBigObjectMove);
         }
 
-        if(Input.GetMouseButtonUp(0) && energy.isCheckBigObjectMove){
+        if(Input.GetMouseButtonUp(0) /*&& isCheckBigObjectMove*/){
             RubbleLaunch();
+        }
+        if(Input.GetMouseButton(0))
+        {
+            Debug.Log(isCheckBigObjectMove);
         }
 
     }
@@ -50,12 +58,12 @@ public class BigRubble : MonoBehaviour
             if(worldPos.x > playerPosition.x){
                 isCheckMousePointLR = true;
                 Debug.Log("右");
-                this.transform.position = new Vector2(playerPosition.x+2.2f,0.15f);
+                this.transform.position = new Vector2(playerPosition.x+2.2f,0);
             }
             else if(worldPos.x < playerPosition.x){
                 isCheckMousePointLR = false;
                 Debug.Log("左");
-                this.transform.position = new Vector2(playerPosition.x-2.2f,0.15f);
+                this.transform.position = new Vector2(playerPosition.x-2.2f,0);
             }
 
         }
@@ -82,14 +90,12 @@ public class BigRubble : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collider) {
         if(collider.gameObject.tag == "Player"){
             isCheckCollisionPlayer = true;
-            Debug.Log("Collision!");
         }
     }
     
     private void OnTriggerExit2D(Collider2D collider) {
         if(collider.gameObject.tag == "Player"){
             isCheckCollisionPlayer = false;
-            Debug.Log("Exit");
         }
     }
 
