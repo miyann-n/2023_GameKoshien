@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 734052028}
   - component: {fileID: 734052027}
   - component: {fileID: 734052030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block256_03_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ PrefabInstance:
     - target: {fileID: 2531592561405813417, guid: 3f8f7c2df56194d75ae99cde804d865c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2531592561405813417, guid: 3f8f7c2df56194d75ae99cde804d865c,
         type: 3}
@@ -774,9 +774,17 @@ PrefabInstance:
       value: 0.81000006
       objectReference: {fileID: 0}
     - target: {fileID: 21292480, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
+      propertyPath: m_Size.x
+      value: 25.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 21292480, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 21292480, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -354042869, guid: 197c274b232c6ff469aebe4eac53b3da,
+      objectReference: {fileID: 1153743667, guid: e0a2339bf6b6f41eeaa55d41fa2d9f62,
         type: 3}
     - target: {fileID: 21292480, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_SortingOrder
@@ -932,7 +940,7 @@ PrefabInstance:
     - target: {fileID: 3861961496447232670, guid: 6be6b5536e7cdfa4b8dea369e32707e5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3861961496447232670, guid: 6be6b5536e7cdfa4b8dea369e32707e5,
         type: 3}
@@ -997,7 +1005,7 @@ GameObject:
   - component: {fileID: 1012098738}
   - component: {fileID: 1012098737}
   - component: {fileID: 1012098739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pedestal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,7 +2374,7 @@ PrefabInstance:
     - target: {fileID: 2531592561405813417, guid: 3f8f7c2df56194d75ae99cde804d865c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2531592561405813417, guid: 3f8f7c2df56194d75ae99cde804d865c,
         type: 3}
@@ -2669,7 +2677,7 @@ GameObject:
   - component: {fileID: 1721598220}
   - component: {fileID: 1721598219}
   - component: {fileID: 1721598222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block256_03_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2978,7 +2986,7 @@ GameObject:
   - component: {fileID: 1932363971}
   - component: {fileID: 1932363970}
   - component: {fileID: 1932363969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

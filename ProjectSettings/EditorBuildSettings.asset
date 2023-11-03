@@ -365,4 +365,67 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Boss/AreaScenes/Area4/Rooms/Room41.unity
     guid: 0440849213227ef41b67c52c821e3600
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Room1.unity
+    guid: 74150da1d0be7314b94c74865a2fabf3
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Room2.unity
+    guid: 38e7204319f8e8d42aa97ed5838b01cf
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Room3.unity
+    guid: 3ae694b97732da74ba57fa969696ae88
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Room4.unity
+    guid: 20b601649cc62134586bf22fb37e8144
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Room5.unity
+    guid: 014fb08f323f46c46903331ebc00cd3f
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Room6.unity
+    guid: 92865c1a130b3c746aec4d0f6ea02025
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Room8.unity
+    guid: 5c3e72ae665dba84191c8d23998b5480
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Room9.unity
+    guid: a889bf7116e4cc94d934bd1659a782a8
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/RoomEx1.unity
+    guid: 8137bd2dfffe74a4faad82fb94994f2a
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/RoomEx4.unity
+    guid: 3dd16f873f22b4991a6fed5a80b4ee05
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room11.unity
+    guid: 9ceb3bee917dd874e93ffd21db3b5924
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room13.unity
+    guid: 29e864961994ddb48b19cca103c0aa49
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room14.unity
+    guid: 8f68af20e1f092c4fa9c55426fb5121e
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room16.unity
+    guid: eb759d0f4ab275d49b7682ff0ddc65d2
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room17.unity
+    guid: a1c1feb610a2bb74b8f8d74ae785b74d
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room18.unity
+    guid: beb34da3a6d8c554199d0c3e02d25548
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room19.unity
+    guid: c875ff1a08f93264e8bcbdef6c92c9a2
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room20.unity
+    guid: 2f8164ccc2447de42b2f8987af62e770
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/RoomEx2.unity
+    guid: 086cf3076280d4acf8aaa7ee23784444
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area1/Rooms/Boss1movie.unity
+    guid: dfeda0b156dde46bea633ddc91f2a54f
+  - enabled: 1
+    path: Assets/Boss/AreaScenes/Area2/Rooms/Room10.unity
+    guid: 629c5f7d2b76343f2bda704a57732a1d
   m_configObjects: {}
