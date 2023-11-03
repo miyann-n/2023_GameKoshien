@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
+  m_Name: Document 12
+  m_EditorClassIdentifier: 
+  ItemID: Document 12
+  TargetInventoryName: MainInventory
+  ForceSlotIndex: 0
+  TargetIndex: 0
+  Usable: 0
+  Consumable: 1
+  ConsumeQuantity: 1
+  Equippable: 0
+  EquippableIfInventoryIsFull: 1
+  MoveWhenEquipped: 1
+  Droppable: 1
+  CanMoveObject: 1
+  CanSwapObject: 1
+  DisplayProperties:
+    DisplayEquipUseButton: 1
+    DisplayMoveButton: 1
+    DisplayDropButton: 1
+    DisplayEquipButton: 1
+    DisplayUseButton: 1
+    DisplayUnequipButton: 1
+  Quantity: 1
+  ItemName: "\u8CC7\u659912"
+  ShortDescription: 
+  Description: "\u7814\u7A76\u6240\u7279\u88FD\u30B9\u30DD\u30FC\u30C4\u30C9\u30EA\u30F3\u30AF\u306B\u3064\u3044\u3066\r\n\r\n\u52B9\u80FD\r\n\r\n\u7814\u7A76\u6240\u7279\u88FD\u30B9\u30DD\u30FC\u30C4\u30C9\u30EA\u30F3\u30AF\u306F\u901A\u5E38\u306E\u30B9\u30DD\u30FC\u30C4\u30C9\u30EA\u30F3\u30AF\u306E\u52B9\u80FD\u3067\u3042\u308B\r\n\u4E73\u9178\u306E\u5206\u89E3\u3084\u56DE\u5FA9\u3001\u6C34\u5206\u3001\u5869\u5206\u306E\u88DC\u7D66\u306B\u52B9\u679C\u7684\u3067\u75B2\u52B4\u3092\u56DE\u5FA9\u3059\u308B\u52B9\u679C\u306B\u52A0\u3048\u3066\u3001\r\n\u50B7\u304C\u7652\u3048\u308B\u52B9\u679C\u3084\u4F53\u3092\u9811\u4E08\u306B\u3057\u3066\u304F\u308C\u308B\u52B9\u679C\u304C\u3042\u308B\u3002\r\n\r\n\u6804\u990A\u6210\u5206\u8868\u793A\r\n\uFF081\u672C\uFF08500ml\uFF09\u5F53\u305F\u308A\uFF09\r\n\u71B1\u91CF\t\t\t350kcal\r\n\u30BF\u30F3\u30D1\u30AF\u8CEA\t\t16.4g\t\r\n\u8102\u8CEA\t\t\t0.4g\r\n\u70AD\u6C34\u5316\u7269\t\t20.1g\r\n\u98DF\u5869\u76F8\u5F53\u91CF\t\t0.9g\r\n\u30AB\u30EB\u30B7\u30A6\u30E0\t\t960g\r\n\u30AB\u30EA\u30A6\u30E0\t\t855g\r\n\u9244\t\t\t0.8g\r\n\u30D3\u30BF\u30DF\u30F3D\t\t8.7\u03BCg\r\n\u30CA\u30AA\u30D2\u30EB\u30EA\u30A6\u30E0\u3000\u3000\u30009.8g\r\n"
+  Icon: {fileID: -315550983, guid: 66b922327a46345d9a91b2bafc614574, type: 3}
+  Prefab: {fileID: 0}
+  ForcePrefabDropQuantity: 0
+  PrefabDropQuantity: 1
+  DropProperties:
+    Shape: 0
+    NormalToSpawnPlane: {x: 0, y: 1, z: 0}
+    MinimumSphereRadius: 1
+    MaximumSphereRadius: 2
+    MinimumCubeBaseSize: {x: 1, y: 1, z: 1}
+    MaximumCubeBaseSize: {x: 2, y: 2, z: 2}
+    MinimumNormalAxisOffset: 0
+    MaximumNormalAxisOffset: 0
+    UseNormalAxisOffsetCurve: 0
+    NormalOffsetCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    NormalOffsetCurveRemapZero: 0
+    NormalOffsetCurveRemapOne: 1
+    InvertNormalOffsetCurve: 0
+    MinimumRotation: {x: 0, y: 0, z: 0}
+    MaximumRotation: {x: 0, y: 0, z: 0}
+    MinimumScale: {x: 1, y: 1, z: 1}
+    MaximumScale: {x: 1, y: 1, z: 1}
+  MaximumStack: 1
+  ItemClass: 0
+  TargetEquipmentInventoryName: 
+  EquippedSound: {fileID: 0}
+  UsedSound: {fileID: 0}
+  MovedSound: {fileID: 0}
+  DroppedSound: {fileID: 0}
+  UseDefaultSoundsIfNull: 1
