@@ -18,7 +18,6 @@ public class Rubble : MonoBehaviour
         isCheckMousePointLR = false;
         isCheckCollisionPlayer = false;
         rb = this.gameObject.GetComponent<Rigidbody2D>();
-        rubbleManagement.isRubbleItemCollected = false;
     }
 
     // Update is called once per frame
