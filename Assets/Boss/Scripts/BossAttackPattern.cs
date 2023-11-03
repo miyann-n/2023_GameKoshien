@@ -137,7 +137,7 @@ public class BossAttackPattern : MonoBehaviour
         boddyAttackChecker = true;
         GameObject target = GameObject.Find("Rectangle");
         endPos = target.transform.position;
-        StartCoroutine(GotoTargetM(1));
+        StartCoroutine(GotoTargetM(0.5f));
         mmPath.enabled = true;
         RunningChecker = false;
     }

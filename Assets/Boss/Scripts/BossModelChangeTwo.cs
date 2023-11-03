@@ -11,7 +11,7 @@ public class BossModelChangeTwo : MonoBehaviour
     [SerializeField] private MonoBehaviour mmPath; //mmPathスクリプト
     [SerializeField] private BoxCollider2D boxcolli; //boxcolliderスクリプト
     [SerializeField] private MonoBehaviour RightMove; //reightmoveスクリプト
-    public BossAttackPatternTree bossAttackPattern; //BossAttackPatternTreeスクリプト
+    public BossAttackPatternTwo bossAttackPattern; //BossAttackPatternTreeスクリプト
     Vector3 startPos;   //初めの場所
     Vector3 endPos;     //向かう場所
 
@@ -19,7 +19,7 @@ public class BossModelChangeTwo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPatternTree>();
+        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPatternTwo>();
         animator = GetComponent<Animator>(); 
         animator.SetBool("break", false); 
     }

@@ -83,6 +83,7 @@ public class BossAttackPatternTwo : MonoBehaviour
     //体当たり攻撃
     public void Body()
     {
+        
         int movePosition = Random.Range(4,6); //攻撃前モーション左右を判断する乱数生成
         //int bossModel = bossModelChange.bossModel;
         bool isCheckBossClear = bossModelChange.isCheckBossClear;
@@ -113,7 +114,7 @@ public class BossAttackPatternTwo : MonoBehaviour
             yield return new WaitForSeconds(2);
             GameObject target = GameObject.Find("Rectangle");
             endPos = target.transform.position;
-            StartCoroutine(GotoTargetM(1));
+            StartCoroutine(GotoTargetM(0.5f));
             mmPath.enabled = true;
             RunningChecker = false;
         }

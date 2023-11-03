@@ -3469,6 +3469,8 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveScene: 1
+  isStartButton: 0
 --- !u!1 &1072031669
 GameObject:
   m_ObjectHideFlags: 0
