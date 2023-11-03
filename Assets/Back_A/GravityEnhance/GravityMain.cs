@@ -41,7 +41,7 @@ public class GravityMain : MonoBehaviour
     private void AbilityOnOffGE(){ //Eが押された時に像力増強の起動フラグを上げ下げする
 
         //変数2の切り替え
-        if(isCheckKeyE && gcCharactor.isCheckCanBigObject != true){
+        if(isCheckKeyE /*&& gcCharactor.isCheckCanBigObject != true*/){
             isCheckKeyE = false;
             Debug.Log("重力増強停止");
         }

@@ -8,12 +8,13 @@ public class BigClickEvent : MonoBehaviour
     public MaterialMove materialMove;
     public GravityClickCharactor gcCharactor;
     private bool isCheckObjectMove;
+    public Player player;
 
     Vector2 mousePos,worldPos;
 
     void Update()
     {
-        if(gcCharactor.isCheckCanBigObject && isCheckObjectMove && materialMove.isCheckAbilityWake){
+        if( isCheckObjectMove && player.isCheckBigObjectMove){
             ObjectMove();
         }
 
@@ -24,7 +25,7 @@ public class BigClickEvent : MonoBehaviour
 
     public void ObjectClick(){
         
-        if(materialMove.isCheckAbilityWake && gcCharactor.isCheckCanBigObject){
+        if(materialMove.isCheckAbilityWake && player.isCheckBigObjectMove){
 
             if(isCheckObjectMove == false){
                 isCheckObjectMove = true;

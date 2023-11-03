@@ -22,8 +22,7 @@ public class GravityClickCharactor : MonoBehaviour
             /*
             （与ダメを規定するスクリプトの変数）= 2;
              */
-             isCheckCanBigObject = true;
-             Debug.Log("ダメージ = 2 & 大障害物動かせる");
+             Debug.Log("ダメージ = 2");
              Invoke("ResetDamage",10f);
              
         }
@@ -33,7 +32,6 @@ public class GravityClickCharactor : MonoBehaviour
         /*
         (与ダメを規定するスクリプトの変数) = 1;
         */
-        isCheckCanBigObject = false;
         Debug.Log("ダメージ = 1 & 大障害物無理");
     }
 }

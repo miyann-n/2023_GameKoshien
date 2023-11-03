@@ -13,7 +13,6 @@ public class GravityReversalPlayer : MonoBehaviour
     public GravityMain gravityMain;
     public MaterialMove materialMove;
     public FireArm firearm;
-    public EnemySpeed enemySpeed;
     /*public Player player;//プレイヤー情報を取得する。*/
 
 

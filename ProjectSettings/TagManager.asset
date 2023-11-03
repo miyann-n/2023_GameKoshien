@@ -11,6 +11,7 @@ TagManager:
   - ReversalArea
   - BigObject
   - SmallObject
+  - Ground
   layers:
   - Default
   - TransparentFX
