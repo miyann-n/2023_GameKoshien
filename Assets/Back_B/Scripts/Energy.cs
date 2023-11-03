@@ -16,9 +16,6 @@ public class Energy : MonoBehaviour
     private float energyIncreaseTimer = 0f; // エネルギー増加のタイマー
 
     private bool isMoveObjectActive; //物体移動のアビリティが起動しているかどうか
-    private bool isGravityIncreaseActive;  //重力増強のアビリティが起動しているかどうか
-    private bool isGravityInversionActive; //重力反転のアビリティが起動しているかどうか
-
     public bool isCheckBigObjectMove; //大障害物を動かせるかどうか
 
 
@@ -42,9 +39,10 @@ public class Energy : MonoBehaviour
     }
     void Update()
     {
-        int b = ability.b;  //選択されているアビリティの番号
         bool isCharactorClicked = gcCharctor.isCharactorClicked; //大障害物をクリックしたかどうか
-
+        /*
+        int b = ability.b;  //選択されているアビリティの番号
+        
         if(b == 0)
         {
             isMoveObjectSet = true;
@@ -69,6 +67,7 @@ public class Energy : MonoBehaviour
             isGravityIncreaseSet = false;
             isGravityInversionSet = false;
         }
+        */
 
         //物体移動
         if(Input.GetKeyDown(KeyCode.E) && isMoveObjectSet && currentEnergy >= 20)

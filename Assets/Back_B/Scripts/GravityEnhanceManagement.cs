@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.CorgiEngine;
-public class JumpItemCollector : MonoBehaviour
+
+public class GravityEnhanceManagement : MonoBehaviour
 {
-    public CharacterJump characterJump;
+    public Energy energy;
+
     bool isEntering = false;
+
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "JumpPowerUP"){
+        if(other.gameObject.tag == "GravityEnhanceItem"){
             isEntering = true;
         }
     }
@@ -15,14 +18,14 @@ public class JumpItemCollector : MonoBehaviour
     private void Update() {
         if(isEntering && Input.GetKeyDown(KeyCode.F))
         {
-            characterJump.isItemCollected = true;
+            energy.isCheckBigObjectMove = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if(other.gameObject.tag == "JumpPowerUP"){
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "GravityEnhanceItem"){
             isEntering = false;
         }
     }
-
 }

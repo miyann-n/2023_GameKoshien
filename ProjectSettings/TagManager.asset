@@ -10,6 +10,15 @@ TagManager:
   - NoMask
   - SurprisedBoxZone
   - JumpPowerUP
+  - firearm
+  - ReversalArea
+  - BigObject
+  - SmallObject
+  - Ground
+  - GravityEnhanceItem
+  - RubbleItem
+  - BigRubble
+  - SmallRubble
   layers:
   - Default
   - TransparentFX

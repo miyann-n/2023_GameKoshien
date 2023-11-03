@@ -8,6 +8,8 @@ public class Rubble : MonoBehaviour
     public bool isCheckLeftClick;
     public bool isCheckMousePointLR;
     private bool isCheckCollisionPlayer;
+
+    public RubbleManagement rubbleManagement;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -16,16 +18,19 @@ public class Rubble : MonoBehaviour
         isCheckMousePointLR = false;
         isCheckCollisionPlayer = false;
         rb = this.gameObject.GetComponent<Rigidbody2D>();
+        rubbleManagement.isRubbleItemCollected = false;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if(Input.GetMouseButton(0)){
+    {   
+        //bool isRubbleItemCollected = rubbleManagement.isRubbleItemCollected;
+        Debug.Log(rubbleManagement.isRubbleItemCollected);
+        if(Input.GetMouseButton(0) && rubbleManagement.isRubbleItemCollected){
             RubbleMove();
         }
 
-        if(Input.GetMouseButtonUp(0)){
+        if(Input.GetMouseButtonUp(0) && rubbleManagement.isRubbleItemCollected){
             RubbleLaunch();
         }
 
@@ -77,14 +82,12 @@ public class Rubble : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collider) {
         if(collider.gameObject.tag == "Player"){
             isCheckCollisionPlayer = true;
-            Debug.Log("Collision!");
         }
     }
     
     private void OnTriggerExit2D(Collider2D collider) {
         if(collider.gameObject.tag == "Player"){
             isCheckCollisionPlayer = false;
-            Debug.Log("Exit");
         }
     }
 
