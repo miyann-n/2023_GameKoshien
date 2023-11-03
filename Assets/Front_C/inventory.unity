@@ -4013,33 +4013,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1488106247}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   OnExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 541037520}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   OnStay:
     m_PersistentCalls:
       m_Calls: []
@@ -4061,6 +4037,8 @@ MonoBehaviour:
   InactiveTime: 1
   Dialogue:
   - "\u30C7\u30FC\u30BF\u30D5\u30A1\u30A4\u30EB\u3092\u53D6\u5F97"
+  - "\u6C0F\u540D\uFF1A\u30EC\u30C9\n\u5F79\u8077\uFF1A\u7814\u7A76\u8005"
+  - "\n\u6607\u9032\u8A55\u4FA1\u8CC7\u6599\n\n\u8A55\u4FA1\u6A5F\u95A2\uFF1AXXXX\u5E741\u6708-XXXX\u5E748\u6708\n\n\u30EC\u30C9\u306F\u91CD\u8981\u306A\u6210\u679C\u3092\u53CE\u3081\u3001\u672C\u7814\u7A76\u6240\u306B\u591A\u5927\u306A\u8CA2\u732E\u3092\u3057\u307E\u3057\u305F\u3002\n\n1.\u7814\u7A76\u5B9F\u7E3E\u306E\u5411\u4E0A\n\t\u30EC\u30C9\u306F\u91CD\u529B\u64CD\u4F5C\u306E\u5206\u91CE\u3067\u8907\u6570\u306E\u5B66\u8853\u8AD6\u6587\u3092\u767A\u8868\u3057\u307E\u3057\u305F\u3002\n\t\u305D\u306E\u4E2D\u306B\u306F\u56FD\u969B\u7684\u306A\u6CE8\u76EE\u3092\u96C6\u3081\u308B\u3082\u306E\u3082\u542B\u307E\u308C\u3066\u304A\u308A\n\t\u3058\u3085...ku0x73\u2026\u88C50\u306E\u958B.......\n2.\u6559ik\u2026\u30680x7..\u30FCd\u2026\u2026.\n"
 --- !u!61 &428192182
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12136,7 +12114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d96dc71d76c4e2ab8eb19d92d40d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 77e9bde317290444fa832ce7515b6201, type: 2}
+  Item: {fileID: 11400000, guid: e3336e6227cfa4637ab3c3d4b42a379b, type: 2}
   Quantity: 1
   RemainingQuantity: 1
   PickableIfInventoryIsFull: 0
@@ -25534,8 +25512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 145.77, y: -177.1}
-  m_SizeDelta: {x: 218.1, y: 143.79999}
+  m_AnchoredPosition: {x: 145.77, y: -270.21}
+  m_SizeDelta: {x: 218.1, y: 330.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5591201793561176429
 MonoBehaviour:
@@ -25559,7 +25537,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 13
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
