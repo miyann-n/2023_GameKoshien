@@ -16,6 +16,7 @@ public class Rubble : MonoBehaviour
     public RubbleManagement rubbleManagement;
     Rigidbody2D rb;
     // Start is called before the first frame update
+
     void Start()
     {
         isCheckLeftClick = false;
@@ -30,7 +31,6 @@ public class Rubble : MonoBehaviour
         string isRubbleItemCollected = File.ReadAllText("Assets/Back_B/Scripts/Flags.txt");
         if(Input.GetMouseButton(0) && isRubbleItemCollected == "true"){
             RubbleMove();
-            Debug.Log("クリック中");
         }
 
         if(Input.GetMouseButtonUp(0) && isRubbleItemCollected == "true"){
@@ -40,7 +40,7 @@ public class Rubble : MonoBehaviour
     }
 
     private void RubbleMove(){
-        Debug.Log("RubbleMove is colled");
+        Debug.Log("クリック中");
         if(isCheckCollisionPlayer){
             GameObject player = GameObject.FindWithTag("Player");
             Vector2 playerPosition = player.transform.position;
@@ -54,30 +54,29 @@ public class Rubble : MonoBehaviour
             if(worldPos.x > playerPosition.x){
                 isCheckMousePointLR = true;
                 Debug.Log("右");
-                this.transform.position = new Vector2(playerPosition.x+1.2f,0.15f);
+               this.transform.position = new Vector2(playerPosition.x+0.8f,1f + playerPosition.y);
             }
             else if(worldPos.x < playerPosition.x){
                 isCheckMousePointLR = false;
                 Debug.Log("左");
-                this.transform.position = new Vector2(playerPosition.x-1.2f,0.15f);
+                this.transform.position = new Vector2(playerPosition.x-0.8f,1f + playerPosition.y);
             }
 
         }
     }
 
     public void RubbleLaunch(){
-        Debug.Log("RubbleLauch is colled");
         if(isCheckLeftClick){
             Debug.Log("クリック離し");
             isCheckLeftClick = false;
             
             if(isCheckMousePointLR){
-                Vector2 force = new Vector2(50f,14f);
+                Vector2 force = new Vector2(50f,20f);
                 Debug.Log("右に飛ばす");
                 rb.AddForce (force, ForceMode2D.Impulse);   
             }
             else{
-                Vector2 force = new Vector2(-50f,14f);
+                Vector2 force = new Vector2(-50f,20f);
                 Debug.Log("左に飛ばす");
                 rb.AddForce (force, ForceMode2D.Impulse);               
             }
@@ -95,12 +94,5 @@ public class Rubble : MonoBehaviour
             isCheckCollisionPlayer = false;
         }
     }
-
-    /*private void OnCollisionEnter2D(Collision2D collision) {
-        if(collision.gameObject.tag =="Ground"){
-            rb.isKinematic = false;
-        }
-    }*/
-
 
 }

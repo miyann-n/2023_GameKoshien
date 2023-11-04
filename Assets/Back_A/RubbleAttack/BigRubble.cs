@@ -57,12 +57,12 @@ public class BigRubble : MonoBehaviour
             if(worldPos.x > playerPosition.x){
                 isCheckMousePointLR = true;
                 Debug.Log("右");
-                this.transform.position = new Vector2(playerPosition.x+2.2f,0.15f);
+                this.transform.position = new Vector2(playerPosition.x+1.7f,1.5f + playerPosition.y);
             }
             else if(worldPos.x < playerPosition.x){
                 isCheckMousePointLR = false;
                 Debug.Log("左");
-                this.transform.position = new Vector2(playerPosition.x-2.2f,0.15f);
+                this.transform.position = new Vector2(playerPosition.x-1.7f,1.5f + playerPosition.y);
             }
 
         }
