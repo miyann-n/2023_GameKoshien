@@ -7,6 +7,7 @@ TagManager:
   - LevelBounds
   - Music
   - Background
+<<<<<<< HEAD
   - NoMask
   - Rubble
   - Platform
@@ -14,6 +15,13 @@ TagManager:
   - Boss
   - SurprisedBoxZone
   - SavePoint
+=======
+  - firearm
+  - ReversalArea
+  - BigObject
+  - SmallObject
+  - Ground
+>>>>>>> feature/Back_A
   layers:
   - Default
   - TransparentFX
