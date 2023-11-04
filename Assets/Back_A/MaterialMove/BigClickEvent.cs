@@ -5,18 +5,6 @@ using UnityEngine;
 public class BigClickEvent : MonoBehaviour
 {
 
-<<<<<<< HEAD
-    public MaterialMove materialMove;
-    public GravityClickCharactor gcCharactor;
-    private bool isCheckObjectMove;
-    public Player player;
-
-    Vector2 mousePos,worldPos;
-
-    void Update()
-    {
-        if( isCheckObjectMove && player.isCheckBigObjectMove){
-=======
     private MaterialMove materialMove;
     private GravityClickCharactor gcCharactor;
     private Energy energy;
@@ -38,7 +26,6 @@ public class BigClickEvent : MonoBehaviour
 
 
         if(/*gcCharactor.isCheckCanBigObject &&*/ isCheckObjectMove && energy.isCheckBigObjectMove){
->>>>>>> feature/back_B
             ObjectMove();
         }
 
@@ -48,18 +35,6 @@ public class BigClickEvent : MonoBehaviour
     }
 
     public void ObjectClick(){
-<<<<<<< HEAD
-        
-        if(materialMove.isCheckAbilityWake && player.isCheckBigObjectMove){
-
-            if(isCheckObjectMove == false){
-                isCheckObjectMove = true;
-                Debug.Log("materialMove = true");
-            }
-
-        }
-        
-=======
 
         if (materialMove.isCheckAbilityWake && energy.isCheckBigObjectMove)
         {
@@ -69,7 +44,6 @@ public class BigClickEvent : MonoBehaviour
 
         }
 
->>>>>>> feature/back_B
     }
 
     private void ObjectMove(){

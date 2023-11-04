@@ -111,7 +111,7 @@ public class BossAttackPatternTree : MonoBehaviour
         if(isCheckBossClear == false)
         {
             yield return new WaitForSeconds(2);
-            GameObject target = GameObject.Find("Rectangle");
+            GameObject target = GameObject.Find("Player");
             endPos = target.transform.position;
             StartCoroutine(GotoTargetM(0.5f));
             mmPath.enabled = true;

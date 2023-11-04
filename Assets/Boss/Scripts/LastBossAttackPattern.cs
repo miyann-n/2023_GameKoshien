@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossAttackPattern : MonoBehaviour
+public class LastBossAttackPattern : MonoBehaviour
 {
     public int AttackControl;
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
@@ -135,7 +135,7 @@ public class BossAttackPattern : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         boddyAttackChecker = true;
-        GameObject target = GameObject.Find("Rectangle");
+        GameObject target = GameObject.Find("Player");
         endPos = target.transform.position;
         StartCoroutine(GotoTargetM(0.5f));
         mmPath.enabled = true;

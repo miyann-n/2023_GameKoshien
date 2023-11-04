@@ -5,7 +5,7 @@ using UnityEngine;
 public class MiniBoss : MonoBehaviour
 {
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
-    private BossAttackPattern bossAttackPattern; //bossattackpatternスクリプト
+    private LastBossAttackPattern LastbossAttackPattern; //Lastbossattackpatternスクリプト
     private float PositionX;
     public int MiniBossHelth = 3;
     [SerializeField] private BoxCollider2D boxcolli;
@@ -16,7 +16,7 @@ public class MiniBoss : MonoBehaviour
     void Start()
     {
         bossModelChange = GameObject.Find("RetroBlobDash").GetComponent<BossModelChange>();
-        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPattern>();
+        LastbossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<LastBossAttackPattern>();
         Vector3 posi = this.transform.localPosition; //オブジェクトの初期位置の取得
         sp.enabled = false; //隠す
         CharaMove.enabled = false;
@@ -47,12 +47,12 @@ public class MiniBoss : MonoBehaviour
             CharaMove.enabled = true;
             boxcolli.enabled = true;
             stomp.enabled = true;
-            bossAttackPattern.AttackControl = Random.Range(0,3);
-            if(bossAttackPattern.AttackControl == 2){
-                bossAttackPattern.AttackControl--;
+            LastbossAttackPattern.AttackControl = Random.Range(0,3);
+            if(LastbossAttackPattern.AttackControl == 2){
+                LastbossAttackPattern.AttackControl--;
             } 
         }
-        bossAttackPattern.RunningChecker = false;
+        LastbossAttackPattern.RunningChecker = false;
     }
 
     public void SpaceInput() //ダメージ処理

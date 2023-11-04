@@ -13,12 +13,12 @@ public class BossModelChange : MonoBehaviour
     [SerializeField] private MonoBehaviour mmPath;
     [SerializeField] private BoxCollider2D boxcolli;
     public BossCoreStan bossCoreStan;
-    public BossAttackPattern bossAttackPattern;
+    public LastBossAttackPattern LastbossAttackPattern;
     
     // Start is called before the first frame update
     void Start()
     {
-        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPattern>();
+        LastbossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<LastBossAttackPattern>();
         animator = GetComponent<Animator>(); 
         animator.SetBool("break", false); 
     }
@@ -56,9 +56,9 @@ public class BossModelChange : MonoBehaviour
         {
             animator.SetBool("death", true); //ボス死亡
         }
-        /*if(bossAttackPattern.AttackControl == 2){
+        /*if(LastbossAttackPattern.AttackControl == 2){
             animator.SetBool("houkou", true);
-        }else if(bossAttackPattern.AttackControl != 2){
+        }else if(LastbossAttackPattern.AttackControl != 2){
             animator.SetBool("houkou", false);
         }*/
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -71,7 +71,7 @@ public class BossModelChange : MonoBehaviour
     private IEnumerator DelayCoroutine()
     {
         yield return new WaitForSeconds(20);
-        bossAttackPattern.RunningChecker = false;
+        LastbossAttackPattern.RunningChecker = false;
         animator.SetBool("stan", false);
         animator.SetBool("break", false);
         bossModel = 0;

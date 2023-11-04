@@ -8,7 +8,7 @@ public class BossRubble : MonoBehaviour
     [SerializeField] private SpriteRenderer sp;
     [SerializeField] private BoxCollider2D boxcolli;
     private BossModelChange bossModelChange; //bossmodelchangeスクリプト
-    private BossAttackPattern bossAttackPattern; //bossattackpatternスクリプト
+    private LastBossAttackPattern LastbossAttackPattern; //Lastbossattackpatternスクリプト
     private float PositionY = 3.5f;
 
     /*public List<GameObject> ObjctList = List<GameObject>();
@@ -18,7 +18,7 @@ public class BossRubble : MonoBehaviour
     void Start()
     {
         bossModelChange = GameObject.Find("RetroBlobDash").GetComponent<BossModelChange>();
-        bossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<BossAttackPattern>();
+        LastbossAttackPattern = GameObject.Find("RetroBlobDash").GetComponent<LastBossAttackPattern>();
         Vector3 posi = this.transform.localPosition; //瓦礫オブジェクトの初期位置の取得
         rd = this.GetComponent<Rigidbody2D>(); 
         rd.bodyType = RigidbodyType2D.Static; //重力を無効化
@@ -45,13 +45,13 @@ public class BossRubble : MonoBehaviour
             rd.bodyType = RigidbodyType2D.Static; //重力を無効化
             sp.enabled = false; //隠す
             boxcolli.enabled = false;
-            bossAttackPattern.RunningChecker = false;
+            LastbossAttackPattern.RunningChecker = false;
         }
     }
 
     public void rbAttack()
     {
-        bossAttackPattern.RunningChecker = true;
+        LastbossAttackPattern.RunningChecker = true;
         int bossModel = bossModelChange.bossModel;
         
         if(bossModel != 2){
