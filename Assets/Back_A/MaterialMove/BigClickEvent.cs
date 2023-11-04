@@ -5,6 +5,7 @@ using UnityEngine;
 public class BigClickEvent : MonoBehaviour
 {
 
+<<<<<<< HEAD
     public MaterialMove materialMove;
     public GravityClickCharactor gcCharactor;
     private bool isCheckObjectMove;
@@ -15,6 +16,29 @@ public class BigClickEvent : MonoBehaviour
     void Update()
     {
         if( isCheckObjectMove && player.isCheckBigObjectMove){
+=======
+    private MaterialMove materialMove;
+    private GravityClickCharactor gcCharactor;
+    private Energy energy;
+    private bool isCheckObjectMove;
+
+    Vector2 mousePos,worldPos;
+    private void Start()
+    {
+        materialMove = GameObject.FindWithTag("Player").GetComponent<MaterialMove>();
+        isCheckObjectMove = false;
+        gcCharactor = GameObject.FindWithTag("Player").GetComponent<GravityClickCharactor>();
+        energy = GameObject.FindWithTag("Player").GetComponent<Energy>();
+    }
+    void Update()
+    {
+        bool isCheckAbilityWake = materialMove.isCheckAbilityWake;
+
+        bool isCheckCanBigObject = gcCharactor.isCheckCanBigObject;
+
+
+        if(/*gcCharactor.isCheckCanBigObject &&*/ isCheckObjectMove && energy.isCheckBigObjectMove){
+>>>>>>> feature/back_B
             ObjectMove();
         }
 
@@ -24,6 +48,7 @@ public class BigClickEvent : MonoBehaviour
     }
 
     public void ObjectClick(){
+<<<<<<< HEAD
         
         if(materialMove.isCheckAbilityWake && player.isCheckBigObjectMove){
 
@@ -34,6 +59,17 @@ public class BigClickEvent : MonoBehaviour
 
         }
         
+=======
+
+        if (materialMove.isCheckAbilityWake && energy.isCheckBigObjectMove)
+        {
+
+            isCheckObjectMove = !isCheckObjectMove;
+            Debug.Log("materialMove = true");
+
+        }
+
+>>>>>>> feature/back_B
     }
 
     private void ObjectMove(){

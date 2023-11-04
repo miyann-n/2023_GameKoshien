@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine; using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using UnityEngine.Serialization;
@@ -35,7 +34,7 @@ namespace MoreMountains.CorgiEngine
 		public int NumberOfJumps = 2;
 		/// defines how high the character can jump
 		[Tooltip("defines how high the character can jump")]
-		public float JumpHeight = 3.025f;
+		public float JumpHeight = 3.0f;
 		/// basic rules for jumps : where can the player jump ?
 		[Tooltip("basic rules for jumps : where can the player jump ?")]
 		public JumpBehavior JumpRestrictions = JumpBehavior.CanJumpAnywhere;
@@ -96,6 +95,10 @@ namespace MoreMountains.CorgiEngine
 		/// whether or not the jump can be stopped
 		public bool CanJumpStop { get; set; }
 
+		// ジャンプ力が強化されるアイテムを持っているか
+		public bool isItemCollected = false;
+
+		//
 		protected float _jumpButtonPressTime = 0;
 		protected float _lastJumpAt = 0;
 		protected bool _stillGroundedAfterJump;
@@ -461,6 +464,9 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Causes the character to start jumping.
 		/// </summary>
+
+		// 
+
 		public virtual void JumpStart()
 		{
 			if (!EvaluateJumpConditions())
@@ -532,9 +538,14 @@ namespace MoreMountains.CorgiEngine
 			SetJumpFlags();
 			CanJumpStop = true;
 
-			// we make the character jump
+			// 実際のジャンプに関連すること
+			if(isItemCollected == true)
+			{
+				JumpHeight *= 1.5f;
+			}
 			_controller.SetVerticalForce(Mathf.Sqrt( 2f * JumpHeight * Mathf.Abs(_controller.Parameters.Gravity) ));
 			JumpHappenedThisFrame = true;
+			JumpHeight = 3.0f;
 		}
 
 		/// <summary>
@@ -690,6 +701,7 @@ namespace MoreMountains.CorgiEngine
 			MMAnimatorExtensions.UpdateAnimatorBool (_animator, _hitTheGroundAnimationParameter, _controller.State.JustGotGrounded, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}
 
+    
 		/// <summary>
 		/// Resets parameters in anticipation for the Character's respawn.
 		/// </summary>
@@ -700,4 +712,9 @@ namespace MoreMountains.CorgiEngine
 			NumberOfJumpsLeft = _initialNumberOfJumps;
 		}
 	}
+
+
 }
+
+
+

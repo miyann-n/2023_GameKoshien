@@ -8,6 +8,7 @@ TagManager:
   - Music
   - Background
 <<<<<<< HEAD
+<<<<<<< HEAD
   - NoMask
   - Rubble
   - Platform
@@ -16,12 +17,24 @@ TagManager:
   - SurprisedBoxZone
   - SavePoint
 =======
+=======
+  - NoMask
+  - SurprisedBoxZone
+  - JumpPowerUP
+>>>>>>> feature/back_B
   - firearm
   - ReversalArea
   - BigObject
   - SmallObject
   - Ground
+<<<<<<< HEAD
 >>>>>>> feature/Back_A
+=======
+  - GravityEnhanceItem
+  - RubbleItem
+  - BigRubble
+  - SmallRubble
+>>>>>>> feature/back_B
   layers:
   - Default
   - TransparentFX

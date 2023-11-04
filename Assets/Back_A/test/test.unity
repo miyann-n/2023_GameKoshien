@@ -956,7 +956,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCheckLeftClick: 0
   isCheckMousePointLR: 0
+<<<<<<< HEAD
   player: {fileID: 943326873}
+=======
+  player: {fileID: 943326863}
+>>>>>>> feature/back_B
 --- !u!50 &546212214
 Rigidbody2D:
   serializedVersion: 4
@@ -1052,7 +1056,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70650694d64849d40b31fbb282ba1edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   materialMove: {fileID: 943326869}
+=======
+>>>>>>> feature/back_B
 --- !u!114 &629159460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,6 +1478,10 @@ MonoBehaviour:
   PlayerNormalDamage: 0
   isCheckCanBigObject: 0
   gravityMain: {fileID: 943326867}
+<<<<<<< HEAD
+=======
+  isCharactorClicked: 0
+>>>>>>> feature/back_B
 --- !u!114 &943326867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1506,6 +1517,10 @@ MonoBehaviour:
   gravityMain: {fileID: 943326867}
   materialMove: {fileID: 943326869}
   firearm: {fileID: 327083959}
+<<<<<<< HEAD
+=======
+  enemySpeed: {fileID: 0}
+>>>>>>> feature/back_B
 --- !u!114 &943326869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1522,8 +1537,13 @@ MonoBehaviour:
   isCheckAbilityWake: 0
   isCheckObjectChase: 0
   roopStoper: 0
+<<<<<<< HEAD
   gravityMain: {fileID: 943326867}
   player: {fileID: 943326873}
+=======
+  isNowOnHighLitht: 0
+  gravityMain: {fileID: 943326867}
+>>>>>>> feature/back_B
   grPlayer: {fileID: 943326868}
 --- !u!70 &943326870
 CapsuleCollider2D:
@@ -1938,9 +1958,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb429a26cf8ab7943bf81c458cc0eb89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   materialMove: {fileID: 943326869}
   gcCharactor: {fileID: 943326866}
   player: {fileID: 943326873}
+=======
+>>>>>>> feature/back_B
 --- !u!114 &1799835054
 MonoBehaviour:
   m_ObjectHideFlags: 0
