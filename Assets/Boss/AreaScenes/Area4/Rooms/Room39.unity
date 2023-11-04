@@ -1467,6 +1467,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4627670522417186506, guid: 5e91f5dbf5fa445749b53e9b29396488,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d293ec9a1af14981a8ac18ee8cdbef1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e91f5dbf5fa445749b53e9b29396488, type: 3}
 --- !u!1 &446325473
